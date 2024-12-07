@@ -95,7 +95,7 @@ class Coach:
 		for usr, trnMask in tstLoader:
 			i += 1
 			usr = usr.long().cuda()
-			trnMask = trnMask.cuda()
+			trnMask = trnMask.cuda()#训练集似乎使用来做掩码的，避免预测到训练集部分?
 			usrEmbeds, itmEmbeds = self.model.predict(self.handler.torchBiAdj)
 
 			allPreds = t.mm(usrEmbeds[usr], t.transpose(itmEmbeds, 1, 0)) * (1 - trnMask) - trnMask * 1e8

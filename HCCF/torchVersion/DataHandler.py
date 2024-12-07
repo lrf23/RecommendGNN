@@ -98,7 +98,7 @@ class TstData(data.Dataset):
 			tstLocs[row].append(col)
 			tstUsrs.add(row)
 		tstUsrs = np.array(list(tstUsrs))
-		self.tstUsrs = tstUsrs
+		self.tstUsrs = tstUsrs#似乎就是找出所有用户，并去重
 		self.tstLocs = tstLocs
 
 	def __len__(self):

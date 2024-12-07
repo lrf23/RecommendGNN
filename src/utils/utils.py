@@ -7,8 +7,28 @@ import torch
 import datetime
 import numpy as np
 import pandas as pd
+import torch.nn.functional as F
 from typing import List, Dict, NoReturn, Any
 
+def pairPredict(ancEmbeds, posEmbeds, negEmbeds):
+	return innerProduct(ancEmbeds, posEmbeds) - innerProduct(ancEmbeds, negEmbeds)
+
+def innerProduct(usrEmbeds, itmEmbeds):
+	return torch.sum(usrEmbeds * itmEmbeds, dim=-1)
+
+def pairPredict(ancEmbeds, posEmbeds, negEmbeds):
+	return innerProduct(ancEmbeds, posEmbeds) - innerProduct(ancEmbeds, negEmbeds)
+
+
+
+def contrastLoss(embeds1, embeds2, nodes, temp):
+	embeds1 = F.normalize(embeds1 + 1e-8, p=2)
+	embeds2 = F.normalize(embeds2 + 1e-8, p=2)
+	pckEmbeds1 = embeds1[nodes]
+	pckEmbeds2 = embeds2[nodes]
+	nume = torch.exp(torch.sum(pckEmbeds1 * pckEmbeds2, dim=-1) / temp)
+	deno = torch.exp(pckEmbeds1 @ pckEmbeds2.T / temp).sum(-1) + 1e-8
+	return -torch.log(nume / deno).mean()
 
 def init_seed(seed):
 	random.seed(seed)

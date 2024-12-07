@@ -1,0 +1,82 @@
+# -*- coding: UTF-8 -*-
+
+import os
+import gc
+import torch
+import torch.nn as nn
+import logging
+import numpy as np
+from time import time
+from tqdm import tqdm
+from torch.utils.data import DataLoader
+
+from utils import utils
+from models.BaseModel import BaseModel
+from helpers.BaseRunner import BaseRunner
+from models.general import HCCF
+
+
+class HCCFRunner(BaseRunner):
+    def fit(self, dataset: BaseModel.Dataset, epoch=-1) -> float:
+        model = dataset.model
+        if model.optimizer is None:
+            model.optimizer = self._build_optimizer(model)
+        model.train()
+        loss_lst = list()
+        dl = DataLoader(dataset, batch_size=self.batch_size, shuffle=True, num_workers=0)
+        for batch in tqdm(dl):
+            batch = utils.batch_to_gpu(batch, model.device)
+            out_dict = model(batch)
+            loss= model.loss(out_dict,batch)
+            model.optimizer.zero_grad()
+            loss.backward()
+            model.optimizer.step()
+            loss_lst.append(loss.detach().cpu().data.numpy())
+        
+        return np.mean(loss_lst).item()
+
+    def predict(self, dataset: BaseModel.Dataset, save_prediction: bool = False) -> np.ndarray:
+        """
+        The returned prediction is a 2D-array, each row corresponds to all the candidates,
+    	and the ground-truth item poses the first.
+    	Example: ground-truth items: [1, 2], 2 negative items for each instance: [[3,4], [5,6]]
+    			 predictions like: [[1,3,4], [2,5,6]]
+    	"""
+        dataset.model.eval()
+        predictions = list()
+        dl = DataLoader(dataset, batch_size=self.eval_batch_size, shuffle=False, num_workers=0)
+        for batch in tqdm(dl):
+            batch=utils.batch_to_gpu(batch, dataset.model.device)
+            prediction=dataset.model.predict(batch)
+            predictions.extend(prediction.cpu().data.numpy())
+        predictions = np.array(predictions)
+
+        return predictions
+
+def testEpoch(self):
+	tstLoader = self.handler.tstLoader
+	epLoss, epRecall, epNdcg = [0] * 3
+	i = 0
+	num = tstLoader.dataset.__len__()
+	steps = num // args.tstBat
+	for usr, trnMask in tstLoader:
+		i += 1
+		usr = usr.long().cuda()
+		trnMask = trnMask.cuda()#训练集似乎使用来做掩码的，避免预测到训练集部分?
+		usrEmbeds, itmEmbeds = self.model.predict(self.handler.torchBiAdj)
+		allPreds = t.mm(usrEmbeds[usr], t.transpose(itmEmbeds, 1, 0)) * (1 - trnMask) - trnMask * 1e8
+		_, topLocs = t.topk(allPreds, args.topk)
+		recall, ndcg = self.calcRes(topLocs.cpu().numpy(), self.handler.tstLoader.dataset.tstLocs, usr)
+		epRecall += recall
+		epNdcg += ndcg
+		log('Steps %d/%d: recall = %.2f, ndcg = %.2f          ' % (i, steps, recall, ndcg), save=False, oneline=True)
+	ret = dict()
+	ret['Recall'] = epRecall / num
+	ret['NDCG'] = epNdcg / num
+	return ret
+        
+def predict(self, adj):
+	embeds, _, _ = self.forward(adj, 1.0)
+	return embeds[:args.user], embeds[args.user:]
+
+    
