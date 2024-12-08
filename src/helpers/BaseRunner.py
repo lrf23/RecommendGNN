@@ -36,7 +36,7 @@ class BaseRunner(object):
 							help='Batch size during testing.')
 		parser.add_argument('--optimizer', type=str, default='Adam',
 							help='optimizer: SGD, Adam, Adagrad, Adadelta')
-		parser.add_argument('--num_workers', type=int, default=5,
+		parser.add_argument('--num_workers', type=int, default=0,
 							help='Number of processors when prepare batches in DataLoader')
 		parser.add_argument('--pin_memory', type=int, default=0,
 							help='pin_memory in DataLoader')

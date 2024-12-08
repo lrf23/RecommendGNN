@@ -6,7 +6,7 @@ from models.BaseModel import GeneralModel
 import numpy as np
 import scipy.sparse as sp
 # from Params import args
-from utils.utils import pairPredict, contrastLoss,calcRegLoss
+from utils.utils import pairPredict, contrastLoss
 
 init = nn.init.xavier_uniform_
 uniformInit = nn.init.uniform
@@ -61,7 +61,7 @@ class HCCF(GeneralModel):
 		self.leaky = args.leaky
 		self.gnn_layer = args.gnn_layer
 		self.adj= self.build_adjmat(corpus.data_df['train'],self.user_num,self.item_num)
-		self.keepRate = 0.8
+		self.keepRate = 0.5
 		self.temp=1
 		self.reg=1e-7
 		self.ssl_reg=1e-3
@@ -94,7 +94,7 @@ class HCCF(GeneralModel):
 			lats.append(temEmbeds + hyperLats[-1])
 		embeds = sum(lats)
 		uEmbeds, iEmbeds = embeds[:self.user_num], embeds[self.user_num:]
-		allPreds = t.mm(uEmbeds[batch['usr']], t.transpose(iEmbeds, 1, 0)) * (1 - batch['trnmask']) - batch['trnmask'] * 1e8
+		allPreds = t.mm(uEmbeds[batch['usr']], t.transpose(iEmbeds, 1, 0))* (1 - batch['trnmask']) - batch['trnmask'] * 1e8
 
 		return allPreds
 
