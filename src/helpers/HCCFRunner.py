@@ -48,35 +48,12 @@ class HCCFRunner(BaseRunner):
         for batch in tqdm(dl):
             batch=utils.batch_to_gpu(batch, dataset.model.device)
             prediction=dataset.model.predict(batch)
-            predictions.extend(prediction.cpu().data.numpy())
+            prediction=prediction.cpu().data.numpy()
+            #print(prediction.shape)
+            predictions.extend(prediction)
         predictions = np.array(predictions)
-
+   
         return predictions
 
-def testEpoch(self):
-	tstLoader = self.handler.tstLoader
-	epLoss, epRecall, epNdcg = [0] * 3
-	i = 0
-	num = tstLoader.dataset.__len__()
-	steps = num // args.tstBat
-	for usr, trnMask in tstLoader:
-		i += 1
-		usr = usr.long().cuda()
-		trnMask = trnMask.cuda()#训练集似乎使用来做掩码的，避免预测到训练集部分?
-		usrEmbeds, itmEmbeds = self.model.predict(self.handler.torchBiAdj)
-		allPreds = t.mm(usrEmbeds[usr], t.transpose(itmEmbeds, 1, 0)) * (1 - trnMask) - trnMask * 1e8
-		_, topLocs = t.topk(allPreds, args.topk)
-		recall, ndcg = self.calcRes(topLocs.cpu().numpy(), self.handler.tstLoader.dataset.tstLocs, usr)
-		epRecall += recall
-		epNdcg += ndcg
-		log('Steps %d/%d: recall = %.2f, ndcg = %.2f          ' % (i, steps, recall, ndcg), save=False, oneline=True)
-	ret = dict()
-	ret['Recall'] = epRecall / num
-	ret['NDCG'] = epNdcg / num
-	return ret
-        
-def predict(self, adj):
-	embeds, _, _ = self.forward(adj, 1.0)
-	return embeds[:args.user], embeds[args.user:]
 
     

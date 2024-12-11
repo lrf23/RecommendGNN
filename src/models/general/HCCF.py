@@ -65,6 +65,7 @@ class HCCF(GeneralModel):
 		self.temp=1
 		self.reg=1e-7
 		self.ssl_reg=1e-3
+		print(self.user_num,self.item_num)
 		#self.optimizer=t.optim.Adam(self.model.parameters(), lr=args.lr, weight_decay=0)
 		self._define_params()
 
@@ -94,7 +95,11 @@ class HCCF(GeneralModel):
 			lats.append(temEmbeds + hyperLats[-1])
 		embeds = sum(lats)
 		uEmbeds, iEmbeds = embeds[:self.user_num], embeds[self.user_num:]
-		allPreds = t.mm(uEmbeds[batch['usr']], t.transpose(iEmbeds, 1, 0))* (1 - batch['trnmask']) - batch['trnmask'] * 1e8
+		m1=uEmbeds[batch['user_id']]
+		m2=iEmbeds[batch['item_id']]
+		allPreds=(m1[:, None, :] * m2).sum(dim=-1)
+		#print(allPreds.shape)
+		#allPreds = #* (1 - batch['trnmask']) - batch['trnmask'] * 1e8
 
 		return allPreds
 

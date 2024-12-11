@@ -66,7 +66,7 @@ class LightGCNBase(object):
 		self.check_list = []
 		user, items = feed_dict['user_id'], feed_dict['item_id']
 		u_embed, i_embed = self.encoder(user, items)
-
+		#print(u_embed.shape,i_embed.shape)
 		prediction = (u_embed[:, None, :] * i_embed).sum(dim=-1)  # [batch_size, -1]
 		u_v = u_embed.repeat(1,items.shape[1]).view(items.shape[0],items.shape[1],-1)
 		i_v = i_embed
@@ -88,6 +88,7 @@ class LightGCN(GeneralModel, LightGCNBase):
 
 	def forward(self, feed_dict):
 		out_dict = LightGCNBase.forward(self, feed_dict)
+		#print(out_dict['prediction'].shape)
 		return {'prediction': out_dict['prediction']}
 	
 class LightGCNImpression(ImpressionModel, LightGCNBase):
