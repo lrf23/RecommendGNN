@@ -21,6 +21,7 @@ class HCCFRunner(BaseRunner):
         model = dataset.model
         if model.optimizer is None:
             model.optimizer = self._build_optimizer(model)
+        dataset.actions_before_epoch()  # must sample before multi thread start
         model.train()
         loss_lst = list()
         dl = DataLoader(dataset, batch_size=self.batch_size, shuffle=True, num_workers=0)
