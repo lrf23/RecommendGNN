@@ -57,14 +57,18 @@
 #generalModel自带的参数
   def __init__(self, args, corpus):
 		super().__init__(args, corpus)
-		self.user_num = corpus.n_users
-		self.item_num = corpus.n_items
-		self.num_neg = args.num_neg
-		self.dropout = args.dropout
+		self.user_num = corpus.n_users #用户数量
+		self.item_num = corpus.n_items #物品数量
+		self.num_neg = args.num_neg #采样负样本数量,在train之前要采样负样本，因为train里面本身没有负样本
+		self.dropout = args.dropout 
 		self.test_all = args.test_all
 ```
 
-+ BaseReader的基本参数：关键是这个train_clicked_set和residual_clicked_set，以及train dev test的self.data_df(字典)
++ BaseReader的基本参数：
+
+  + 关键是train dev test的**self.data_df**(字典)，里面就是从数据集读出来的原始数据
+
+  + 以及这个train_clicked_set和residual_clicked_set，似乎代表每个用户的点击物品集合，和未点击物品集合，是对原始数据经过二次处理得到的
 
 ```python
   class BaseReader(object):
@@ -123,7 +127,9 @@
   				positive_num, positive_num/self.all_df.shape[0]*100))
 ```
 
-+ Reader得到的data_df是如何传到Dataset中的:用这个corpus和phase
++ Reader得到的data_df是如何传到Dataset中的:
+  + 用这个corpus和phase，courpus是reader的对象实例，phase是{train dev test}其中之一
+
 
 ```python 
 	class Dataset(BaseDataset):#就是torch的Dataset类
@@ -143,7 +149,7 @@
 + reader之后的数据
 
 ```python
-1. data_df[][],两维度，第一个是['train','dev','test']，第二个由具体数据确定，可能是['user_id','item_id','neg_id']有reader定义
+1. data_df[][],两维度，第一个是['train','dev','test']，第二个由具体数据确定，可能是['user_id','item_id','neg_id']，又由reader定义
 2. data[]，一个维度，指带具体数据类型（训练测试验证）的，某个key，由模型的Dataset确定。
 
 ```
