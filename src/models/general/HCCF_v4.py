@@ -1,4 +1,4 @@
-"""Amazon数据集"""
+"""Movielens数据集."""
 from statistics import mean
 import torch as t
 from torch import nn
@@ -11,22 +11,22 @@ from utils.utils import pairPredict, contrastLoss
 
 init = nn.init.xavier_uniform_
 uniformInit = nn.init.uniform
-
-class HCCF_v2(GeneralModel):
+t.manual_seed(3207)
+class HCCF_v4(GeneralModel):
 	reader = 'BaseReader'
-	runner = 'HCCFRunnerv2'
+	runner = 'HCCFRunner'
 	extra_log_args = ['emb_size', 'hyper_num','leaky','gnn_layer']
 
 	@staticmethod
 	def parse_model_args(parser):
-		parser.add_argument('--emb_size', type=int, default=64,
+		parser.add_argument('--emb_size', type=int, default=32,
                             help='Size of embedding vectors.')
-		parser.add_argument('--hyper_num', type=int, default=8,
+		parser.add_argument('--hyper_num', type=int, default=128,
                             help='number of hyperedges')
 		parser.add_argument('--leaky', default=0.5, type=float, help='slope of leaky relu')
 		parser.add_argument('--gnn_layer', default=2, type=int, help='number of gnn layers')
 		return GeneralModel.parse_model_args(parser)
-	
+
 	@staticmethod
 	def normalizeAdj(mat):
 		degree = np.array(mat.sum(axis=-1))
@@ -34,7 +34,7 @@ class HCCF_v2(GeneralModel):
 		dInvSqrt[np.isinf(dInvSqrt)] = 0.0
 		dInvSqrtMat = sp.diags(dInvSqrt)
 		return mat.dot(dInvSqrtMat).transpose().dot(dInvSqrtMat).tocoo()
-	
+
 	@staticmethod
 	def build_adjmat(data,user,item):
 		mat=sp.coo_matrix((np.ones_like(data['user_id']), (data['user_id'], data['item_id'])))
@@ -62,11 +62,14 @@ class HCCF_v2(GeneralModel):
 		self.hyper_num = args.hyper_num
 		self.leaky = args.leaky
 		self.gnn_layer = args.gnn_layer
+		self.w_emb_dim = 64
 		self.adj= self.build_adjmat(corpus.data_df['train'],self.user_num,self.item_num)#计算邻接矩阵
-		self.keepRate = 0.4
+		self.keepRate = 0.5
 		self.temp=1
 		self.reg=1e-7
 		self.ssl_reg=1e-3
+		self.tau=1 #温度参数
+		self.k_neg=64
 		print(self.user_num,self.item_num)
 		#self.optimizer=t.optim.Adam(self.model.parameters(), lr=args.lr, weight_decay=0)
 		self._define_params()
@@ -80,7 +83,11 @@ class HCCF_v2(GeneralModel):
 		self.uHyper = nn.Parameter(init(t.empty(self.emb_size, self.hyper_num)))
 		self.iHyper = nn.Parameter(init(t.empty(self.emb_size, self.hyper_num)))
 		self.edgeDropper = SpAdjDropEdge()
-	
+		#self.local_hyper=nn.Parameter(t.tensor(0.5))
+		# self.embed_user_p = nn.Parameter(init(t.empty(self.user_num,self.w_emb_dim)))
+		# self.embed_item_p =  nn.Parameter(init(t.empty(self.item_num,self.w_emb_dim)))
+
+
 	def predict(self,batch):
 		pre_keeprate=1.0
 		embeds = t.concat([self.uEmbeds, self.iEmbeds], dim=0)
@@ -133,19 +140,39 @@ class HCCF_v2(GeneralModel):
 			ret += W.norm(2).square()
 		# ret += (model.usrStruct + model.itmStruct)
 		return ret
-	
+
 	def ranknet_loss(self,scoreDiff):
 		return t.nn.functional.binary_cross_entropy_with_logits(scoreDiff, t.ones_like(scoreDiff))
-	
+
 	def loss(self, output,feed_dict):
 		ancEmbeds = output['ancEmbeds']#batch_size x emb_size
 		posEmbeds = output['posEmbeds']#batch_size x emb_size
-		negEmbeds = output['negEmbeds']#batch_size x emb_size
+		negEmbeds = output['negEmbeds']#batch_size x num_neg x emb_size
 		#print(ancEmbeds.shape,posEmbeds.shape,negEmbeds.shape)
 		gcnEmbedsLst = output['gnnLats']
 		hyperEmbedsLst = output['hyperLats']
-		scoreDiff = pairPredict(ancEmbeds, posEmbeds, negEmbeds)
+		pos_rating=(ancEmbeds*posEmbeds).sum(dim=-1)
+		neg_rating=(ancEmbeds*negEmbeds).sum(dim=-1)
+
+		#neg_rating = t.matmul(t.unsqueeze(ancEmbeds, 1), negEmbeds.permute(0, 2, 1)).squeeze(dim=1)
+		#neg_softmax = (neg_rating - neg_rating.max()).softmax(dim=1)
+		#print(pos_rating.shape,neg_rating.shape)
+		scoreDiff = pos_rating- neg_rating
+		#bprLoss = -(((pos_rating[:, None] - neg_rating).sigmoid() * neg_softmax).sum(dim=1)).clamp(min=1e-8,max=1-1e-8).log().mean()
 		bprLoss = - (scoreDiff).sigmoid().log().mean()#BPR损失
+		# users_p_emb = self.embed_user_p(feed_dict['user_id'])
+		# neg_p_emb = self.embed_item_p(feed_dict['item_id'][:,1:])
+
+		# s_negative = t.matmul(t.unsqueeze(users_p_emb, 1),
+        #                             neg_p_emb.permute(0, 2, 1)).squeeze(dim=1)
+
+        # # users_p_emb = F.normalize(users_p_emb, dim = -1)
+        # # neg_p_emb = F.normalize(neg_p_emb, dim = -1)
+		# p_negative = t.softmax(s_negative, dim=1) # score for negative samples
+
+		numerator = t.exp(pos_rating / self.tau)
+		denominator = numerator + t.sum(t.exp(neg_rating / self.tau), dim = 1)
+		ssm_loss = t.mean(t.negative(t.log(numerator/denominator)))
 		#print(bprLoss)
 		#bprLoss = t.maximum(t.zeros_like(scoreDiff), 1 - scoreDiff).mean() * 40
 		sslLoss = 0
@@ -155,9 +182,9 @@ class HCCF_v2(GeneralModel):
 			sslLoss += contrastLoss(embeds1[:self.user_num], embeds2[:self.user_num], t.unique(feed_dict['user_id']), self.temp) + contrastLoss(embeds1[self.user_num:], embeds2[self.user_num:], t.unique(feed_dict['item_id'][:,0]), self.temp)
 		sslLoss = sslLoss *self.ssl_reg#局部和全局的对比损失项
 		regLoss = self.calcRegLoss() * self.reg#正则项
-		loss = bprLoss + regLoss+ sslLoss
-		return loss
-	
+		alpha=0.2
+		return sslLoss+regLoss+(1-alpha)*bprLoss+alpha*ssm_loss
+
 
 
 class GCNLayer(nn.Module):
@@ -172,7 +199,7 @@ class HGNNLayer(nn.Module):
 	def __init__(self, leaky=0.5):
 		super(HGNNLayer, self).__init__()
 		self.act = nn.LeakyReLU(negative_slope=leaky)
-	
+
 	def forward(self, adj, embeds):
 		# lat = self.act(adj.T @ embeds)
 		# ret = self.act(adj @ lat)
