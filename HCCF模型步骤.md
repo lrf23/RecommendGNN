@@ -1,4 +1,4 @@
-# HCCF算法流程
+# HCCF算法流程和Rechorus框架解读
 1. 读入数据
 
    数据好像就是两个矩阵，一个训练矩阵，一个测试矩阵，然后矩阵n x m，n代表用户数量，m代表物品数量
@@ -36,7 +36,48 @@
    
 
 2. 准备模型
-3. 训练（不重要了）
+
+   ```python
+   #使用Adam优化器
+   def prepareModel(self):
+   		self.model = Model().cuda()
+   		self.opt = t.optim.Adam(self.model.parameters(), lr=args.lr, weight_decay=0)
+   ```
+
+   
+
+3. 训练
+
+   ```python
+   	def trainEpoch(self):
+   		trnLoader = self.handler.trnLoader
+   		trnLoader.dataset.negSampling()
+   		epLoss, epPreLoss = 0, 0
+   		steps = trnLoader.dataset.__len__() // args.batch
+   		for i, tem in enumerate(trnLoader):
+   			ancs, poss, negs = tem
+   			ancs = ancs.long().cuda()
+   			poss = poss.long().cuda()
+   			negs = negs.long().cuda()
+   
+   			bprLoss, sslLoss = self.model.calcLosses(ancs, poss, negs, self.handler.torchBiAdj, args.keepRate)#计算bpr和对比损失
+   			sslLoss = sslLoss * args.ssl_reg
+   
+   			regLoss = calcRegLoss(self.model) * args.reg#计算正则项损失
+   			loss = bprLoss + regLoss + sslLoss#总损失
+   			epLoss += loss.item()
+   			epPreLoss += bprLoss.item()
+   			self.opt.zero_grad()
+   			loss.backward()#反向传播
+   			self.opt.step()#更新梯度
+   			log('Step %d/%d: loss = %.3f, regLoss = %.3f         ' % (i, steps, loss, regLoss), save=False, oneline=True)
+   		ret = dict()#记录结果
+   		ret['Loss'] = epLoss / steps
+   		ret['preLoss'] = epPreLoss / steps
+   		return ret
+   ```
+
+   
 
 # 框架算法流程
 
