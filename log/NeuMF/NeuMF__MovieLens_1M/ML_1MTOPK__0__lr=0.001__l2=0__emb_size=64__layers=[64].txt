@@ -1,0 +1,66 @@
+INFO:root:Namespace(model_name='NeuMF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 18:20:56 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gpu                | 0                   
+ l2                 | 0                   
+ layers             | [64]                
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 1180736
+INFO:root:NeuMF(
+  (mf_u_embeddings): Embedding(6033, 64)
+  (mf_i_embeddings): Embedding(3126, 64)
+  (mlp_u_embeddings): Embedding(6033, 64)
+  (mlp_i_embeddings): Embedding(3126, 64)
+  (mlp): ModuleList(
+    (0): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (dropout_layer): Dropout(p=0, inplace=False)
+  (prediction): Linear(in_features=128, out_features=1, bias=False)
+)
+INFO:root:Test Before Training: (HR@5:0.0518,NDCG@5:0.0308,HR@10:0.0943,NDCG@10:0.0444,HR@20:0.2035,NDCG@20:0.0715,HR@50:0.4976,NDCG@50:0.1292)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.3330 [9.6 s]	dev=(HR@5:0.3782,NDCG@5:0.2516) [0.0 s] *
+INFO:root:Epoch 2     loss=0.2292 [9.0 s]	dev=(HR@5:0.3852,NDCG@5:0.2553) [0.0 s] *
+INFO:root:Epoch 3     loss=0.1900 [10.6 s]	dev=(HR@5:0.3696,NDCG@5:0.2502) [0.0 s]
+INFO:root:Epoch 4     loss=0.1668 [9.2 s]	dev=(HR@5:0.3763,NDCG@5:0.2508) [0.0 s]
+INFO:root:Epoch 5     loss=0.1527 [9.2 s]	dev=(HR@5:0.3798,NDCG@5:0.2545) [0.0 s]
+INFO:root:Epoch 6     loss=0.1407 [10.9 s]	dev=(HR@5:0.3755,NDCG@5:0.2523) [0.0 s]
+INFO:root:Epoch 7     loss=0.1310 [11.1 s]	dev=(HR@5:0.3673,NDCG@5:0.2442) [0.0 s]
+INFO:root:Epoch 8     loss=0.1224 [8.8 s]	dev=(HR@5:0.3525,NDCG@5:0.2402) [0.0 s]
+INFO:root:Epoch 9     loss=0.1173 [11.9 s]	dev=(HR@5:0.3579,NDCG@5:0.2403) [0.0 s]
+INFO:root:Epoch 10    loss=0.1122 [10.6 s]	dev=(HR@5:0.3712,NDCG@5:0.2498) [0.0 s]
+INFO:root:
+Best Iter(dev)=    2	 dev=(HR@5:0.3852,NDCG@5:0.2553) [101.2 s] 
+INFO:root:Load model from ../model/NeuMF/NeuMF__MovieLens_1M/ML_1MTOPK__0__lr=0.001__l2=0__emb_size=64__layers=[64].pt
+INFO:root:
+Dev  After Training: (HR@5:0.3852,NDCG@5:0.2553,HR@10:0.5515,NDCG@10:0.3087,HR@20:0.7537,NDCG@20:0.3598,HR@50:0.9516,NDCG@50:0.3997)
+INFO:root:
+Test After Training: (HR@5:0.3737,NDCG@5:0.2565,HR@10:0.5397,NDCG@10:0.3101,HR@20:0.7408,NDCG@20:0.3610,HR@50:0.9402,NDCG@50:0.4014)
+INFO:root:Saving top-100 recommendation results to: ../log/NeuMF/NeuMF__MovieLens_1M\ML_1MTOPK__0__lr=0\rec-NeuMF-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/NeuMF/NeuMF__MovieLens_1M\ML_1MTOPK__0__lr=0\rec-NeuMF-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 18:22:38 ---------------------------------------------

@@ -1,0 +1,99 @@
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:34:36 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 64                  
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 594368
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0438,NDCG@5:0.0244,HR@10:0.1006,NDCG@10:0.0425,HR@20:0.1966,NDCG@20:0.0666,HR@50:0.5080,NDCG@50:0.1275)
+INFO:root:Epoch 1     loss=0.7632 [63.7 s]	dev=(HR@5:0.3653,NDCG@5:0.2466) [0.1 s] *
+INFO:root:Epoch 2     loss=0.6428 [67.6 s]	dev=(HR@5:0.3700,NDCG@5:0.2474) [0.1 s] *
+INFO:root:Epoch 3     loss=0.6211 [116.3 s]	dev=(HR@5:0.3661,NDCG@5:0.2421) [0.2 s]
+INFO:root:Epoch 4     loss=0.6087 [148.1 s]	dev=(HR@5:0.3486,NDCG@5:0.2313) [0.2 s]
+INFO:root:Epoch 5     loss=0.5983 [99.9 s]	dev=(HR@5:0.3513,NDCG@5:0.2374) [0.1 s]
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:43:14 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:43:26 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 64                  
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 594368
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0438,NDCG@5:0.0244,HR@10:0.1006,NDCG@10:0.0425,HR@20:0.1966,NDCG@20:0.0666,HR@50:0.5080,NDCG@50:0.1275)
+INFO:root:Epoch 1     loss=0.4205 [68.1 s]	dev=(HR@5:0.3618,NDCG@5:0.2434) [0.1 s] *
+INFO:root:Epoch 2     loss=0.3429 [66.8 s]	dev=(HR@5:0.3618,NDCG@5:0.2425) [0.1 s]
+INFO:root:Epoch 3     loss=0.3245 [69.1 s]	dev=(HR@5:0.3642,NDCG@5:0.2431) [0.1 s]
+INFO:root:Epoch 4     loss=0.3156 [81.3 s]	dev=(HR@5:0.3564,NDCG@5:0.2358) [0.1 s]
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:48:18 ---------------------------------------------

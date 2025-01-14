@@ -1,0 +1,124 @@
+INFO:root:Namespace(model_name='FM', model_mode='CTR')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-15 10:12:30 ---------------------------------------------
+INFO:root:
+===================================================
+ Arguments                  | Values               
+===================================================
+ batch_size                 | 256                 
+ data_appendix              | _context000         
+ dataset                    | MovieLens_1M/ML_1...
+ dropout                    | 0                   
+ early_stop                 | 10                  
+ emb_size                   | 64                  
+ epoch                      | 200                 
+ eval_batch_size            | 256                 
+ gpu                        | 0                   
+ include_item_features      | 0                   
+ include_situation_features | 0                   
+ include_user_features      | 0                   
+ l2                         | 0                   
+ loss_n                     | BCE                 
+ lr                         | 0.001               
+ main_metric                |                     
+ num_neg                    | 1                   
+ num_workers                | 0                   
+ optimizer                  | Adam                
+ random_seed                | 0                   
+ save_final_results         | 1                   
+ test_all                   | 0                   
+ topk                       | 5,10,20,50          
+===================================================
+INFO:root:Device: cuda
+INFO:root:Reading data from "../data", dataset = "MovieLens_1M/ML_1MCTR" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 6034, "# item": 3125, "# entry": 994202
+INFO:root:"# positive interaction": 574286 (57.8%)
+INFO:root:Collect context features...
+INFO:root:Loading context for train set...
+INFO:root:Loading context for dev set...
+INFO:root:Loading context for test set...
+INFO:root:Save corpus to ../data\MovieLens_1M/ML_1MCTR\ContextReader_context000.pkl
+INFO:root:#params: 595466
+INFO:root:FMCTR(
+  (loss_fn): BCELoss()
+  (context_embedding): ModuleDict(
+    (user_id): Embedding(6035, 64)
+    (item_id): Embedding(3126, 64)
+  )
+  (linear_embedding): ModuleDict(
+    (user_id): Embedding(6035, 1)
+    (item_id): Embedding(3126, 1)
+  )
+)
+INFO:root:Namespace(model_name='FM', model_mode='CTR')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-15 10:15:29 ---------------------------------------------
+INFO:root:
+===================================================
+ Arguments                  | Values               
+===================================================
+ batch_size                 | 256                 
+ data_appendix              | _context000         
+ dataset                    | MovieLens_1M/ML_1...
+ dropout                    | 0                   
+ early_stop                 | 10                  
+ emb_size                   | 64                  
+ epoch                      | 200                 
+ eval_batch_size            | 256                 
+ gpu                        | 0                   
+ include_item_features      | 0                   
+ include_situation_features | 0                   
+ include_user_features      | 0                   
+ l2                         | 0                   
+ loss_n                     | BCE                 
+ lr                         | 0.001               
+ main_metric                |                     
+ num_neg                    | 1                   
+ num_workers                | 0                   
+ optimizer                  | Adam                
+ random_seed                | 0                   
+ save_final_results         | 1                   
+ test_all                   | 0                   
+ topk                       | 5,10,20,50          
+===================================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MCTR\ContextReader_context000.pkl
+INFO:root:#params: 595466
+INFO:root:FMCTR(
+  (loss_fn): BCELoss()
+  (context_embedding): ModuleDict(
+    (user_id): Embedding(6035, 64)
+    (item_id): Embedding(3126, 64)
+  )
+  (linear_embedding): ModuleDict(
+    (user_id): Embedding(6035, 1)
+    (item_id): Embedding(3126, 1)
+  )
+)
+INFO:root:Test Before Training: (ACC@All:0.5371,AUC@All:0.5027,F1_SCORE@All:0.6531)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.5763 [10.9 s]	dev=(ACC@All:0.6776,AUC@All:0.7722,F1_SCORE@All:0.7231) [0.1 s] *
+INFO:root:Epoch 2     loss=0.5106 [12.6 s]	dev=(ACC@All:0.6840,AUC@All:0.7736,F1_SCORE@All:0.7236) [0.0 s] *
+INFO:root:Epoch 3     loss=0.4825 [10.4 s]	dev=(ACC@All:0.6873,AUC@All:0.7759,F1_SCORE@All:0.7246) [0.0 s] *
+INFO:root:Epoch 4     loss=0.4499 [11.9 s]	dev=(ACC@All:0.6871,AUC@All:0.7759,F1_SCORE@All:0.7225) [0.0 s]
+INFO:root:Epoch 5     loss=0.4131 [16.1 s]	dev=(ACC@All:0.6865,AUC@All:0.7720,F1_SCORE@All:0.7171) [0.1 s]
+INFO:root:Epoch 6     loss=0.3754 [12.4 s]	dev=(ACC@All:0.6842,AUC@All:0.7663,F1_SCORE@All:0.7115) [0.0 s]
+INFO:root:Epoch 7     loss=0.3411 [13.5 s]	dev=(ACC@All:0.6827,AUC@All:0.7608,F1_SCORE@All:0.7089) [0.1 s]
+INFO:root:Epoch 8     loss=0.3116 [15.6 s]	dev=(ACC@All:0.6865,AUC@All:0.7560,F1_SCORE@All:0.7084) [0.1 s]
+INFO:root:Epoch 9     loss=0.2870 [15.9 s]	dev=(ACC@All:0.6819,AUC@All:0.7506,F1_SCORE@All:0.7041) [0.1 s]
+INFO:root:Epoch 10    loss=0.2665 [14.0 s]	dev=(ACC@All:0.6790,AUC@All:0.7465,F1_SCORE@All:0.7003) [0.1 s]
+INFO:root:Epoch 11    loss=0.2493 [17.8 s]	dev=(ACC@All:0.6744,AUC@All:0.7417,F1_SCORE@All:0.6962) [0.0 s]
+INFO:root:Epoch 12    loss=0.2348 [12.6 s]	dev=(ACC@All:0.6724,AUC@All:0.7379,F1_SCORE@All:0.6945) [0.0 s]
+INFO:root:Early stop at 12 based on dev result.
+INFO:root:
+Best Iter(dev)=    3	 dev=(ACC@All:0.6873,AUC@All:0.7759,F1_SCORE@All:0.7246) [164.1 s] 
+INFO:root:Load model from ../model/FMCTR/FMCTR__MovieLens_1M/ML_1MCTR_context000__0__lr=0.001__l2=0__emb_size=64__loss_n=BCE.pt
+INFO:root:
+Dev  After Training: (ACC@All:0.6873,AUC@All:0.7759,F1_SCORE@All:0.7246)
+INFO:root:
+Test After Training: (ACC@All:0.7106,AUC@All:0.7819,F1_SCORE@All:0.7557)
+INFO:root:Saving CTR prediction results to: ../log/FMCTR/FMCTR__MovieLens_1M\ML_1MCTR_context000__0__lr=0\rec-FMCTR-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving CTR prediction results to: ../log/FMCTR/FMCTR__MovieLens_1M\ML_1MCTR_context000__0__lr=0\rec-FMCTR-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-15 10:18:14 ---------------------------------------------

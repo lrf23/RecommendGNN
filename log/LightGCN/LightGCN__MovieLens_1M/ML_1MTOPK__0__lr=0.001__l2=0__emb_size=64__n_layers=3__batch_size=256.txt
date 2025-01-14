@@ -1,0 +1,172 @@
+INFO:root:Namespace(model_name='LightGCN', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-12 16:41:00 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gpu                | 0                   
+ l2                 | 0                   
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Reading data from "../data", dataset = "MovieLens_1M/ML_1MTOPK" 
+INFO:root:Counting dataset statistics...
+INFO:root:"# user": 6032, "# item": 3125, "# entry": 574197
+INFO:root:Save corpus to ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 586176
+INFO:root:LightGCN(
+  (encoder): LGCNEncoder(
+    (embedding_dict): ParameterDict(
+        (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 3126x64 (cuda:0)]
+        (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 6033x64 (cuda:0)]
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0501,NDCG@5:0.0286,HR@10:0.0967,NDCG@10:0.0435,HR@20:0.2008,NDCG@20:0.0697,HR@50:0.4934,NDCG@50:0.1268)
+INFO:root:Optimizer: Adam
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-12 16:41:31 ---------------------------------------------
+INFO:root:Namespace(model_name='LightGCN', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-12 16:41:40 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gpu                | 0                   
+ l2                 | 0                   
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 586176
+INFO:root:LightGCN(
+  (encoder): LGCNEncoder(
+    (embedding_dict): ParameterDict(
+        (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 3126x64 (cuda:0)]
+        (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 6033x64 (cuda:0)]
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0501,NDCG@5:0.0286,HR@10:0.0967,NDCG@10:0.0435,HR@20:0.2008,NDCG@20:0.0697,HR@50:0.4934,NDCG@50:0.1268)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.3678 [51.0 s]	dev=(HR@5:0.3431,NDCG@5:0.2295) [0.1 s] *
+INFO:root:Epoch 2     loss=0.3367 [49.7 s]	dev=(HR@5:0.3450,NDCG@5:0.2319) [0.1 s] *
+INFO:root:Epoch 3     loss=0.3225 [49.6 s]	dev=(HR@5:0.3653,NDCG@5:0.2451) [0.1 s] *
+INFO:root:Epoch 4     loss=0.2899 [49.7 s]	dev=(HR@5:0.3712,NDCG@5:0.2453) [0.1 s] *
+INFO:root:Epoch 5     loss=0.2761 [49.2 s]	dev=(HR@5:0.3716,NDCG@5:0.2448) [0.1 s]
+INFO:root:Epoch 6     loss=0.2649 [51.0 s]	dev=(HR@5:0.3790,NDCG@5:0.2513) [0.1 s] *
+INFO:root:Epoch 7     loss=0.2488 [53.0 s]	dev=(HR@5:0.3821,NDCG@5:0.2568) [0.1 s] *
+INFO:root:Epoch 8     loss=0.2365 [51.2 s]	dev=(HR@5:0.3849,NDCG@5:0.2586) [0.1 s] *
+INFO:root:Epoch 9     loss=0.2274 [58.4 s]	dev=(HR@5:0.3821,NDCG@5:0.2586) [0.1 s] *
+INFO:root:Epoch 10    loss=0.2218 [53.3 s]	dev=(HR@5:0.3876,NDCG@5:0.2603) [0.1 s] *
+INFO:root:
+Best Iter(dev)=   10	 dev=(HR@5:0.3876,NDCG@5:0.2603) [517.2 s] 
+INFO:root:Load model from ../model/LightGCN/LightGCN__MovieLens_1M/ML_1MTOPK__0__lr=0.001__l2=0__emb_size=64__n_layers=3__batch_size=256.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3876,NDCG@5:0.2603,HR@10:0.5613,NDCG@10:0.3163,HR@20:0.7467,NDCG@20:0.3633,HR@50:0.9469,NDCG@50:0.4038)
+INFO:root:
+Test After Training: (HR@5:0.3678,NDCG@5:0.2478,HR@10:0.5327,NDCG@10:0.3007,HR@20:0.7216,NDCG@20:0.3486,HR@50:0.9349,NDCG@50:0.3915)
+INFO:root:Saving top-100 recommendation results to: ../log/LightGCN/LightGCN__MovieLens_1M\ML_1MTOPK__0__lr=0\rec-LightGCN-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/LightGCN/LightGCN__MovieLens_1M\ML_1MTOPK__0__lr=0\rec-LightGCN-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-12 16:50:25 ---------------------------------------------
+INFO:root:Namespace(model_name='LightGCN', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 18:00:45 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gpu                | 0                   
+ l2                 | 0                   
+ lr                 | 0.001               
+ main_metric        |                     
+ n_layers           | 3                   
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 586176
+INFO:root:LightGCN(
+  (encoder): LGCNEncoder(
+    (embedding_dict): ParameterDict(
+        (item_emb): Parameter containing: [torch.cuda.FloatTensor of size 3126x64 (cuda:0)]
+        (user_emb): Parameter containing: [torch.cuda.FloatTensor of size 6033x64 (cuda:0)]
+    )
+  )
+)
+INFO:root:Test Before Training: (HR@5:0.0501,NDCG@5:0.0286,HR@10:0.0967,NDCG@10:0.0435,HR@20:0.2008,NDCG@20:0.0697,HR@50:0.4934,NDCG@50:0.1268)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.3678 [63.0 s]	dev=(HR@5:0.3431,NDCG@5:0.2295) [0.2 s] *
+INFO:root:Epoch 2     loss=0.3367 [77.1 s]	dev=(HR@5:0.3450,NDCG@5:0.2319) [0.2 s] *
+INFO:root:Epoch 3     loss=0.3225 [76.9 s]	dev=(HR@5:0.3653,NDCG@5:0.2451) [0.2 s] *
+INFO:root:Epoch 4     loss=0.2899 [77.6 s]	dev=(HR@5:0.3712,NDCG@5:0.2453) [0.2 s] *
+INFO:root:Epoch 5     loss=0.2761 [76.9 s]	dev=(HR@5:0.3716,NDCG@5:0.2448) [0.2 s]
+INFO:root:Epoch 6     loss=0.2649 [77.3 s]	dev=(HR@5:0.3790,NDCG@5:0.2513) [0.2 s] *
+INFO:root:Epoch 7     loss=0.2488 [76.6 s]	dev=(HR@5:0.3821,NDCG@5:0.2568) [0.2 s] *
+INFO:root:Epoch 8     loss=0.2365 [75.5 s]	dev=(HR@5:0.3849,NDCG@5:0.2586) [0.2 s] *
+INFO:root:Epoch 9     loss=0.2274 [75.6 s]	dev=(HR@5:0.3821,NDCG@5:0.2586) [0.2 s] *
+INFO:root:Epoch 10    loss=0.2218 [75.2 s]	dev=(HR@5:0.3876,NDCG@5:0.2603) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   10	 dev=(HR@5:0.3876,NDCG@5:0.2603) [753.4 s] 
+INFO:root:Load model from ../model/LightGCN/LightGCN__MovieLens_1M/ML_1MTOPK__0__lr=0.001__l2=0__emb_size=64__n_layers=3__batch_size=256.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3876,NDCG@5:0.2603,HR@10:0.5613,NDCG@10:0.3163,HR@20:0.7467,NDCG@20:0.3633,HR@50:0.9469,NDCG@50:0.4038)
+INFO:root:
+Test After Training: (HR@5:0.3678,NDCG@5:0.2478,HR@10:0.5327,NDCG@10:0.3007,HR@20:0.7216,NDCG@20:0.3486,HR@50:0.9349,NDCG@50:0.3915)
+INFO:root:Saving top-100 recommendation results to: ../log/LightGCN/LightGCN__MovieLens_1M\ML_1MTOPK__0__lr=0\rec-LightGCN-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/LightGCN/LightGCN__MovieLens_1M\ML_1MTOPK__0__lr=0\rec-LightGCN-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 18:13:26 ---------------------------------------------

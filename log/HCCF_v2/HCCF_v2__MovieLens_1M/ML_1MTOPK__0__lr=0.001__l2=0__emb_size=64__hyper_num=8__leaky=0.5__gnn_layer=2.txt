@@ -1,0 +1,59 @@
+INFO:root:Namespace(model_name='HCCF_v2', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-20 23:28:04 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 587200
+INFO:root:HCCF_v2(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0498,NDCG@5:0.0292,HR@10:0.0988,NDCG@10:0.0449,HR@20:0.2042,NDCG@20:0.0711,HR@50:0.5132,NDCG@50:0.1315)
+INFO:root:Epoch 1     loss=0.4604 [60.8 s]	dev=(HR@5:0.3443,NDCG@5:0.2304) [0.1 s] *
+INFO:root:Epoch 2     loss=0.3935 [59.9 s]	dev=(HR@5:0.3712,NDCG@5:0.2473) [0.1 s] *
+INFO:root:Epoch 3     loss=0.3726 [65.5 s]	dev=(HR@5:0.3564,NDCG@5:0.2368) [0.1 s]
+INFO:root:Epoch 4     loss=0.3658 [62.5 s]	dev=(HR@5:0.3689,NDCG@5:0.2448) [0.1 s]
+INFO:root:Epoch 5     loss=0.3628 [63.4 s]	dev=(HR@5:0.3564,NDCG@5:0.2371) [0.1 s]
+INFO:root:Epoch 6     loss=0.3595 [66.4 s]	dev=(HR@5:0.3610,NDCG@5:0.2401) [0.1 s]
+INFO:root:Epoch 7     loss=0.3579 [72.1 s]	dev=(HR@5:0.3653,NDCG@5:0.2434) [0.2 s]
+INFO:root:Epoch 8     loss=0.3568 [99.9 s]	dev=(HR@5:0.3638,NDCG@5:0.2398) [0.1 s]
+INFO:root:Epoch 9     loss=0.3554 [62.6 s]	dev=(HR@5:0.3708,NDCG@5:0.2475) [0.1 s] *
+INFO:root:Epoch 10    loss=0.3547 [67.4 s]	dev=(HR@5:0.3692,NDCG@5:0.2464) [0.1 s]
+INFO:root:Epoch 11    loss=0.3536 [65.4 s]	dev=(HR@5:0.3708,NDCG@5:0.2440) [0.1 s]
+INFO:root:Epoch 12    loss=0.3536 [73.4 s]	dev=(HR@5:0.3689,NDCG@5:0.2432) [0.1 s]
+INFO:root:Epoch 13    loss=0.3515 [134.4 s]	dev=(HR@5:0.3673,NDCG@5:0.2428) [0.2 s]
+INFO:root:Epoch 14    loss=0.3516 [114.3 s]	dev=(HR@5:0.3685,NDCG@5:0.2442) [0.1 s]
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-20 23:46:04 ---------------------------------------------

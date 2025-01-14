@@ -1,0 +1,1729 @@
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:22:59 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=4.6940 [8.7 s]	dev=(HR@5:0.2880,NDCG@5:0.1959) [0.2 s] *
+INFO:root:Epoch 2     loss=4.2342 [7.3 s]	dev=(HR@5:0.3125,NDCG@5:0.2188) [0.2 s] *
+INFO:root:Epoch 3     loss=3.9030 [7.4 s]	dev=(HR@5:0.3346,NDCG@5:0.2335) [0.2 s] *
+INFO:root:Epoch 4     loss=3.6649 [7.3 s]	dev=(HR@5:0.3449,NDCG@5:0.2435) [0.2 s] *
+INFO:root:Epoch 5     loss=3.4682 [7.3 s]	dev=(HR@5:0.3545,NDCG@5:0.2518) [0.2 s] *
+INFO:root:Epoch 6     loss=3.2965 [7.6 s]	dev=(HR@5:0.3656,NDCG@5:0.2593) [0.2 s] *
+INFO:root:Epoch 7     loss=3.1514 [7.5 s]	dev=(HR@5:0.3739,NDCG@5:0.2657) [0.2 s] *
+INFO:root:Epoch 8     loss=3.0252 [7.5 s]	dev=(HR@5:0.3791,NDCG@5:0.2685) [0.2 s] *
+INFO:root:Epoch 9     loss=2.9157 [7.3 s]	dev=(HR@5:0.3845,NDCG@5:0.2714) [0.2 s] *
+INFO:root:Epoch 10    loss=2.8210 [7.3 s]	dev=(HR@5:0.3884,NDCG@5:0.2741) [0.2 s] *
+INFO:root:Epoch 11    loss=2.7449 [7.7 s]	dev=(HR@5:0.3974,NDCG@5:0.2818) [0.2 s] *
+INFO:root:Epoch 12    loss=2.6839 [8.0 s]	dev=(HR@5:0.4002,NDCG@5:0.2852) [0.2 s] *
+INFO:root:Epoch 13    loss=2.6326 [8.2 s]	dev=(HR@5:0.4021,NDCG@5:0.2870) [0.2 s] *
+INFO:root:Epoch 14    loss=2.5905 [8.1 s]	dev=(HR@5:0.4053,NDCG@5:0.2879) [0.2 s] *
+INFO:root:Epoch 15    loss=2.5546 [8.6 s]	dev=(HR@5:0.4024,NDCG@5:0.2862) [0.2 s]
+INFO:root:Epoch 16    loss=2.5292 [8.0 s]	dev=(HR@5:0.4003,NDCG@5:0.2858) [0.2 s]
+INFO:root:Epoch 17    loss=2.5046 [8.4 s]	dev=(HR@5:0.4059,NDCG@5:0.2890) [0.2 s] *
+INFO:root:Epoch 18    loss=2.4844 [8.4 s]	dev=(HR@5:0.4060,NDCG@5:0.2892) [0.2 s] *
+INFO:root:Epoch 19    loss=2.4390 [8.2 s]	dev=(HR@5:0.4054,NDCG@5:0.2887) [0.2 s]
+INFO:root:Epoch 20    loss=2.4430 [8.0 s]	dev=(HR@5:0.4093,NDCG@5:0.2928) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.4093,NDCG@5:0.2928) [160.7 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4093,NDCG@5:0.2928,HR@10:0.5283,NDCG@10:0.3315,HR@20:0.6342,NDCG@20:0.3583,HR@50:0.8095,NDCG@50:0.3929)
+INFO:root:
+Test After Training: (HR@5:0.3394,NDCG@5:0.2340,HR@10:0.4582,NDCG@10:0.2726,HR@20:0.5690,NDCG@20:0.3006,HR@50:0.7688,NDCG@50:0.3398)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 13:25:45 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:29:16 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=2.6656 [8.4 s]	dev=(HR@5:0.2885,NDCG@5:0.1968) [0.2 s] *
+INFO:root:Epoch 2     loss=2.4209 [7.4 s]	dev=(HR@5:0.3122,NDCG@5:0.2181) [0.2 s] *
+INFO:root:Epoch 3     loss=2.2478 [7.4 s]	dev=(HR@5:0.3341,NDCG@5:0.2332) [0.2 s] *
+INFO:root:Epoch 4     loss=2.1242 [7.3 s]	dev=(HR@5:0.3449,NDCG@5:0.2432) [0.2 s] *
+INFO:root:Epoch 5     loss=2.0260 [7.3 s]	dev=(HR@5:0.3541,NDCG@5:0.2507) [0.2 s] *
+INFO:root:Epoch 6     loss=1.9436 [7.5 s]	dev=(HR@5:0.3639,NDCG@5:0.2579) [0.2 s] *
+INFO:root:Epoch 7     loss=1.8739 [7.4 s]	dev=(HR@5:0.3727,NDCG@5:0.2647) [0.2 s] *
+INFO:root:Epoch 8     loss=1.8167 [7.4 s]	dev=(HR@5:0.3789,NDCG@5:0.2693) [0.2 s] *
+INFO:root:Epoch 9     loss=1.7676 [7.3 s]	dev=(HR@5:0.3816,NDCG@5:0.2706) [0.2 s] *
+INFO:root:Epoch 10    loss=1.7251 [7.3 s]	dev=(HR@5:0.3878,NDCG@5:0.2740) [0.2 s] *
+INFO:root:Epoch 11    loss=1.6913 [7.8 s]	dev=(HR@5:0.3962,NDCG@5:0.2804) [0.2 s] *
+INFO:root:Epoch 12    loss=1.6655 [8.0 s]	dev=(HR@5:0.4006,NDCG@5:0.2846) [0.2 s] *
+INFO:root:Epoch 13    loss=1.6447 [8.4 s]	dev=(HR@5:0.4013,NDCG@5:0.2865) [0.2 s] *
+INFO:root:Epoch 14    loss=1.6277 [8.2 s]	dev=(HR@5:0.4004,NDCG@5:0.2867) [0.2 s] *
+INFO:root:Epoch 15    loss=1.6142 [8.1 s]	dev=(HR@5:0.3987,NDCG@5:0.2856) [0.2 s]
+INFO:root:Epoch 16    loss=1.6040 [7.9 s]	dev=(HR@5:0.4023,NDCG@5:0.2854) [0.2 s]
+INFO:root:Epoch 17    loss=1.5972 [7.9 s]	dev=(HR@5:0.4053,NDCG@5:0.2885) [0.2 s] *
+INFO:root:Epoch 18    loss=1.5889 [8.1 s]	dev=(HR@5:0.4062,NDCG@5:0.2896) [0.2 s] *
+INFO:root:Epoch 19    loss=1.5681 [8.0 s]	dev=(HR@5:0.4028,NDCG@5:0.2876) [0.2 s]
+INFO:root:Epoch 20    loss=1.5736 [7.9 s]	dev=(HR@5:0.4065,NDCG@5:0.2902) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.4065,NDCG@5:0.2902) [158.5 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4065,NDCG@5:0.2902,HR@10:0.5277,NDCG@10:0.3296,HR@20:0.6359,NDCG@20:0.3569,HR@50:0.8132,NDCG@50:0.3919)
+INFO:root:
+Test After Training: (HR@5:0.3381,NDCG@5:0.2319,HR@10:0.4591,NDCG@10:0.2713,HR@20:0.5694,NDCG@20:0.2992,HR@50:0.7668,NDCG@50:0.3380)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 13:31:59 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:32:17 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=3.8828 [8.4 s]	dev=(HR@5:0.2872,NDCG@5:0.1957) [0.2 s] *
+INFO:root:Epoch 2     loss=3.5101 [7.5 s]	dev=(HR@5:0.3141,NDCG@5:0.2198) [0.2 s] *
+INFO:root:Epoch 3     loss=3.2417 [8.1 s]	dev=(HR@5:0.3361,NDCG@5:0.2341) [0.2 s] *
+INFO:root:Epoch 4     loss=3.0474 [8.4 s]	dev=(HR@5:0.3436,NDCG@5:0.2426) [0.2 s] *
+INFO:root:Epoch 5     loss=2.8926 [8.9 s]	dev=(HR@5:0.3543,NDCG@5:0.2519) [0.2 s] *
+INFO:root:Epoch 6     loss=2.7555 [8.3 s]	dev=(HR@5:0.3656,NDCG@5:0.2592) [0.2 s] *
+INFO:root:Epoch 7     loss=2.6415 [8.4 s]	dev=(HR@5:0.3725,NDCG@5:0.2649) [0.2 s] *
+INFO:root:Epoch 8     loss=2.5448 [8.5 s]	dev=(HR@5:0.3795,NDCG@5:0.2692) [0.2 s] *
+INFO:root:Epoch 9     loss=2.4594 [8.7 s]	dev=(HR@5:0.3839,NDCG@5:0.2711) [0.2 s] *
+INFO:root:Epoch 10    loss=2.3858 [8.4 s]	dev=(HR@5:0.3887,NDCG@5:0.2748) [0.2 s] *
+INFO:root:Epoch 11    loss=2.3278 [8.2 s]	dev=(HR@5:0.3981,NDCG@5:0.2821) [0.2 s] *
+INFO:root:Epoch 12    loss=2.2822 [8.3 s]	dev=(HR@5:0.4028,NDCG@5:0.2866) [0.2 s] *
+INFO:root:Epoch 13    loss=2.2443 [8.4 s]	dev=(HR@5:0.4030,NDCG@5:0.2874) [0.2 s] *
+INFO:root:Epoch 14    loss=2.2134 [8.4 s]	dev=(HR@5:0.4038,NDCG@5:0.2878) [0.2 s] *
+INFO:root:Epoch 15    loss=2.1865 [8.3 s]	dev=(HR@5:0.4008,NDCG@5:0.2864) [0.2 s]
+INFO:root:Epoch 16    loss=2.1682 [8.4 s]	dev=(HR@5:0.4010,NDCG@5:0.2856) [0.2 s]
+INFO:root:Epoch 17    loss=2.1523 [8.2 s]	dev=(HR@5:0.4080,NDCG@5:0.2902) [0.2 s] *
+INFO:root:Epoch 18    loss=2.1370 [8.3 s]	dev=(HR@5:0.4060,NDCG@5:0.2897) [0.2 s]
+INFO:root:Epoch 19    loss=2.1023 [8.1 s]	dev=(HR@5:0.4043,NDCG@5:0.2882) [0.2 s]
+INFO:root:Epoch 20    loss=2.1077 [8.3 s]	dev=(HR@5:0.4094,NDCG@5:0.2925) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.4094,NDCG@5:0.2925) [170.2 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4094,NDCG@5:0.2925,HR@10:0.5268,NDCG@10:0.3307,HR@20:0.6365,NDCG@20:0.3585,HR@50:0.8113,NDCG@50:0.3929)
+INFO:root:
+Test After Training: (HR@5:0.3401,NDCG@5:0.2338,HR@10:0.4601,NDCG@10:0.2728,HR@20:0.5705,NDCG@20:0.3006,HR@50:0.7687,NDCG@50:0.3395)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 13:35:12 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:42:09 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=3.9583 [8.9 s]	dev=(HR@5:0.2130,NDCG@5:0.1388) [0.2 s] *
+INFO:root:Epoch 2     loss=3.6224 [7.9 s]	dev=(HR@5:0.2383,NDCG@5:0.1559) [0.2 s] *
+INFO:root:Epoch 3     loss=3.5232 [8.0 s]	dev=(HR@5:0.2508,NDCG@5:0.1658) [0.2 s] *
+INFO:root:Epoch 4     loss=3.4582 [8.1 s]	dev=(HR@5:0.2618,NDCG@5:0.1750) [0.2 s] *
+INFO:root:Epoch 5     loss=3.4218 [8.1 s]	dev=(HR@5:0.2680,NDCG@5:0.1798) [0.2 s] *
+INFO:root:Epoch 6     loss=3.3775 [8.2 s]	dev=(HR@5:0.2708,NDCG@5:0.1832) [0.2 s] *
+INFO:root:Epoch 7     loss=3.3540 [8.0 s]	dev=(HR@5:0.2760,NDCG@5:0.1874) [0.2 s] *
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 13:43:16 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:44:05 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=3.8609 [7.2 s]	dev=(HR@5:0.2873,NDCG@5:0.1957) [0.2 s] *
+INFO:root:Epoch 2     loss=3.4883 [6.4 s]	dev=(HR@5:0.3146,NDCG@5:0.2199) [0.2 s] *
+INFO:root:Epoch 3     loss=3.2200 [6.6 s]	dev=(HR@5:0.3357,NDCG@5:0.2341) [0.2 s] *
+INFO:root:Epoch 4     loss=3.0258 [6.7 s]	dev=(HR@5:0.3440,NDCG@5:0.2427) [0.2 s] *
+INFO:root:Epoch 5     loss=2.8710 [6.7 s]	dev=(HR@5:0.3543,NDCG@5:0.2518) [0.2 s] *
+INFO:root:Epoch 6     loss=2.7339 [6.4 s]	dev=(HR@5:0.3656,NDCG@5:0.2590) [0.2 s] *
+INFO:root:Epoch 7     loss=2.6200 [6.5 s]	dev=(HR@5:0.3724,NDCG@5:0.2647) [0.2 s] *
+INFO:root:Epoch 8     loss=2.5234 [7.3 s]	dev=(HR@5:0.3800,NDCG@5:0.2695) [0.2 s] *
+INFO:root:Epoch 9     loss=2.4379 [7.7 s]	dev=(HR@5:0.3844,NDCG@5:0.2714) [0.2 s] *
+INFO:root:Epoch 10    loss=2.3644 [7.9 s]	dev=(HR@5:0.3887,NDCG@5:0.2747) [0.2 s] *
+INFO:root:Epoch 11    loss=2.3064 [7.6 s]	dev=(HR@5:0.3979,NDCG@5:0.2821) [0.2 s] *
+INFO:root:Epoch 12    loss=2.2609 [13.4 s]	dev=(HR@5:0.4030,NDCG@5:0.2867) [0.2 s] *
+INFO:root:Epoch 13    loss=2.2230 [7.6 s]	dev=(HR@5:0.4024,NDCG@5:0.2872) [0.2 s] *
+INFO:root:Epoch 14    loss=2.1921 [7.6 s]	dev=(HR@5:0.4040,NDCG@5:0.2879) [0.2 s] *
+INFO:root:Epoch 15    loss=2.1652 [7.2 s]	dev=(HR@5:0.4013,NDCG@5:0.2865) [0.2 s]
+INFO:root:Epoch 16    loss=2.1468 [7.3 s]	dev=(HR@5:0.4011,NDCG@5:0.2856) [0.2 s]
+INFO:root:Epoch 17    loss=2.1310 [8.0 s]	dev=(HR@5:0.4072,NDCG@5:0.2899) [0.4 s] *
+INFO:root:Epoch 18    loss=2.1157 [13.1 s]	dev=(HR@5:0.4060,NDCG@5:0.2896) [0.2 s]
+INFO:root:Epoch 19    loss=2.0810 [7.1 s]	dev=(HR@5:0.4041,NDCG@5:0.2883) [0.2 s]
+INFO:root:Epoch 20    loss=2.0864 [7.3 s]	dev=(HR@5:0.4101,NDCG@5:0.2928) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.4101,NDCG@5:0.2928) [159.5 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4101,NDCG@5:0.2928,HR@10:0.5260,NDCG@10:0.3305,HR@20:0.6365,NDCG@20:0.3585,HR@50:0.8117,NDCG@50:0.3930)
+INFO:root:
+Test After Training: (HR@5:0.3401,NDCG@5:0.2338,HR@10:0.4606,NDCG@10:0.2729,HR@20:0.5703,NDCG@20:0.3005,HR@50:0.7683,NDCG@50:0.3394)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 13:46:48 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:47:23 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 5                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:50:59 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 5                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:51:40 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 5                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:53:19 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 5                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 13:53:24 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:53:31 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 5                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=1.3108 [8.3 s]	dev=(HR@5:0.2424,NDCG@5:0.1631) [0.2 s] *
+INFO:root:Epoch 2     loss=1.1619 [7.6 s]	dev=(HR@5:0.2933,NDCG@5:0.2052) [0.2 s] *
+INFO:root:Epoch 3     loss=1.0198 [7.5 s]	dev=(HR@5:0.3287,NDCG@5:0.2306) [0.2 s] *
+INFO:root:Epoch 4     loss=0.9157 [7.5 s]	dev=(HR@5:0.3513,NDCG@5:0.2496) [0.2 s] *
+INFO:root:Epoch 5     loss=0.8409 [7.5 s]	dev=(HR@5:0.3674,NDCG@5:0.2617) [0.2 s] *
+INFO:root:Epoch 6     loss=0.7833 [7.8 s]	dev=(HR@5:0.3684,NDCG@5:0.2632) [0.2 s] *
+INFO:root:Epoch 7     loss=0.7402 [7.5 s]	dev=(HR@5:0.3668,NDCG@5:0.2605) [0.2 s]
+INFO:root:Epoch 8     loss=0.7119 [7.4 s]	dev=(HR@5:0.3754,NDCG@5:0.2665) [0.2 s] *
+INFO:root:Epoch 9     loss=0.6866 [7.4 s]	dev=(HR@5:0.3806,NDCG@5:0.2686) [0.2 s] *
+INFO:root:Epoch 10    loss=0.6654 [7.7 s]	dev=(HR@5:0.3846,NDCG@5:0.2739) [0.2 s] *
+INFO:root:Epoch 11    loss=0.6491 [7.8 s]	dev=(HR@5:0.3846,NDCG@5:0.2750) [0.2 s] *
+INFO:root:Epoch 12    loss=0.6332 [8.2 s]	dev=(HR@5:0.3893,NDCG@5:0.2777) [0.2 s] *
+INFO:root:Epoch 13    loss=0.6282 [8.3 s]	dev=(HR@5:0.3872,NDCG@5:0.2763) [0.2 s]
+INFO:root:Epoch 14    loss=0.6171 [8.7 s]	dev=(HR@5:0.3917,NDCG@5:0.2793) [0.2 s] *
+INFO:root:Epoch 15    loss=0.6068 [9.3 s]	dev=(HR@5:0.3910,NDCG@5:0.2791) [0.2 s]
+INFO:root:Epoch 16    loss=0.6062 [8.1 s]	dev=(HR@5:0.3944,NDCG@5:0.2825) [0.2 s] *
+INFO:root:Epoch 17    loss=0.5983 [8.5 s]	dev=(HR@5:0.3931,NDCG@5:0.2822) [0.2 s]
+INFO:root:Epoch 18    loss=0.5919 [8.4 s]	dev=(HR@5:0.3931,NDCG@5:0.2821) [0.2 s]
+INFO:root:Epoch 19    loss=0.5856 [8.2 s]	dev=(HR@5:0.3972,NDCG@5:0.2838) [0.2 s] *
+INFO:root:Epoch 20    loss=0.5851 [8.3 s]	dev=(HR@5:0.3960,NDCG@5:0.2837) [0.2 s]
+INFO:root:
+Best Iter(dev)=   19	 dev=(HR@5:0.3972,NDCG@5:0.2838) [163.7 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3972,NDCG@5:0.2838,HR@10:0.5047,NDCG@10:0.3187,HR@20:0.6119,NDCG@20:0.3458,HR@50:0.8000,NDCG@50:0.3829)
+INFO:root:
+Test After Training: (HR@5:0.3327,NDCG@5:0.2296,HR@10:0.4470,NDCG@10:0.2669,HR@20:0.5560,NDCG@20:0.2943,HR@50:0.7728,NDCG@50:0.3370)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 13:56:19 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:56:25 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 2                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=0.8622 [9.1 s]	dev=(HR@5:0.2104,NDCG@5:0.1375) [0.2 s] *
+INFO:root:Epoch 2     loss=0.7689 [8.2 s]	dev=(HR@5:0.2649,NDCG@5:0.1832) [0.2 s] *
+INFO:root:Epoch 3     loss=0.6713 [8.1 s]	dev=(HR@5:0.3106,NDCG@5:0.2166) [0.2 s] *
+INFO:root:Epoch 4     loss=0.6018 [8.7 s]	dev=(HR@5:0.3324,NDCG@5:0.2356) [0.2 s] *
+INFO:root:Epoch 5     loss=0.5522 [8.7 s]	dev=(HR@5:0.3502,NDCG@5:0.2476) [0.2 s] *
+INFO:root:Epoch 6     loss=0.5166 [8.7 s]	dev=(HR@5:0.3589,NDCG@5:0.2553) [0.2 s] *
+INFO:root:Epoch 7     loss=0.4925 [8.4 s]	dev=(HR@5:0.3579,NDCG@5:0.2525) [0.2 s]
+INFO:root:Epoch 8     loss=0.4781 [8.4 s]	dev=(HR@5:0.3675,NDCG@5:0.2596) [0.2 s] *
+INFO:root:Epoch 9     loss=0.4603 [8.4 s]	dev=(HR@5:0.3693,NDCG@5:0.2616) [0.2 s] *
+INFO:root:Epoch 10    loss=0.4470 [8.2 s]	dev=(HR@5:0.3753,NDCG@5:0.2653) [0.2 s] *
+INFO:root:Epoch 11    loss=0.4399 [8.3 s]	dev=(HR@5:0.3771,NDCG@5:0.2662) [0.2 s] *
+INFO:root:Epoch 12    loss=0.4314 [8.8 s]	dev=(HR@5:0.3806,NDCG@5:0.2699) [0.2 s] *
+INFO:root:Epoch 13    loss=0.4245 [8.4 s]	dev=(HR@5:0.3837,NDCG@5:0.2724) [0.2 s] *
+INFO:root:Epoch 14    loss=0.4186 [8.2 s]	dev=(HR@5:0.3838,NDCG@5:0.2740) [0.2 s] *
+INFO:root:Epoch 15    loss=0.4125 [8.3 s]	dev=(HR@5:0.3878,NDCG@5:0.2751) [0.2 s] *
+INFO:root:Epoch 16    loss=0.4101 [8.5 s]	dev=(HR@5:0.3916,NDCG@5:0.2767) [0.2 s] *
+INFO:root:Epoch 17    loss=0.4071 [8.3 s]	dev=(HR@5:0.3917,NDCG@5:0.2799) [0.2 s] *
+INFO:root:Epoch 18    loss=0.4012 [8.2 s]	dev=(HR@5:0.3934,NDCG@5:0.2795) [0.2 s]
+INFO:root:Epoch 19    loss=0.3990 [8.2 s]	dev=(HR@5:0.3927,NDCG@5:0.2797) [0.2 s]
+INFO:root:Epoch 20    loss=0.3976 [8.5 s]	dev=(HR@5:0.3975,NDCG@5:0.2831) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.3975,NDCG@5:0.2831) [172.7 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3975,NDCG@5:0.2831,HR@10:0.5102,NDCG@10:0.3197,HR@20:0.6092,NDCG@20:0.3446,HR@50:0.8004,NDCG@50:0.3823)
+INFO:root:
+Test After Training: (HR@5:0.3292,NDCG@5:0.2245,HR@10:0.4449,NDCG@10:0.2621,HR@20:0.5553,NDCG@20:0.2898,HR@50:0.7656,NDCG@50:0.3312)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 13:59:22 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 13:59:27 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=0.6049 [8.7 s]	dev=(HR@5:0.1992,NDCG@5:0.1308) [0.2 s] *
+INFO:root:Epoch 2     loss=0.5469 [8.6 s]	dev=(HR@5:0.2389,NDCG@5:0.1628) [0.2 s] *
+INFO:root:Epoch 3     loss=0.4778 [8.3 s]	dev=(HR@5:0.2781,NDCG@5:0.1925) [0.2 s] *
+INFO:root:Epoch 4     loss=0.4374 [8.5 s]	dev=(HR@5:0.3064,NDCG@5:0.2163) [0.2 s] *
+INFO:root:Epoch 5     loss=0.4069 [8.5 s]	dev=(HR@5:0.3270,NDCG@5:0.2300) [0.2 s] *
+INFO:root:Epoch 6     loss=0.3852 [8.6 s]	dev=(HR@5:0.3362,NDCG@5:0.2366) [0.2 s] *
+INFO:root:Epoch 7     loss=0.3733 [8.4 s]	dev=(HR@5:0.3359,NDCG@5:0.2378) [0.2 s] *
+INFO:root:Epoch 8     loss=0.3634 [8.3 s]	dev=(HR@5:0.3411,NDCG@5:0.2425) [0.2 s] *
+INFO:root:Epoch 9     loss=0.3523 [8.3 s]	dev=(HR@5:0.3447,NDCG@5:0.2437) [0.2 s] *
+INFO:root:Epoch 10    loss=0.3468 [8.3 s]	dev=(HR@5:0.3540,NDCG@5:0.2513) [0.2 s] *
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:01:00 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:01:26 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:01:43 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=4.5489 [8.3 s]	dev=(HR@5:0.1341,NDCG@5:0.0884) [0.2 s] *
+INFO:root:Loss is Nan. Stop training at 2.
+INFO:root:
+Best Iter(dev)=    1	 dev=(HR@5:0.1341,NDCG@5:0.0884) [8.5 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.1341,NDCG@5:0.0884,HR@10:0.1998,NDCG@10:0.1094,HR@20:0.3045,NDCG@20:0.1356,HR@50:0.5700,NDCG@50:0.1876)
+INFO:root:
+Test After Training: (HR@5:0.1116,NDCG@5:0.0710,HR@10:0.1820,NDCG@10:0.0935,HR@20:0.2893,NDCG@20:0.1204,HR@50:0.5600,NDCG@50:0.1734)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:02:03 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:03:48 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=3.8828 [8.3 s]	dev=(HR@5:0.2872,NDCG@5:0.1957) [0.2 s] *
+INFO:root:Epoch 2     loss=3.5101 [7.4 s]	dev=(HR@5:0.3140,NDCG@5:0.2197) [0.2 s] *
+INFO:root:Epoch 3     loss=3.2417 [7.5 s]	dev=(HR@5:0.3359,NDCG@5:0.2341) [0.2 s] *
+INFO:root:Epoch 4     loss=3.0474 [7.5 s]	dev=(HR@5:0.3440,NDCG@5:0.2428) [0.2 s] *
+INFO:root:Epoch 5     loss=2.8926 [7.4 s]	dev=(HR@5:0.3537,NDCG@5:0.2516) [0.2 s] *
+INFO:root:Epoch 6     loss=2.7559 [7.5 s]	dev=(HR@5:0.3643,NDCG@5:0.2587) [0.2 s] *
+INFO:root:Epoch 7     loss=2.6420 [7.7 s]	dev=(HR@5:0.3727,NDCG@5:0.2652) [0.2 s] *
+INFO:root:Epoch 8     loss=2.5455 [7.6 s]	dev=(HR@5:0.3799,NDCG@5:0.2694) [0.2 s] *
+INFO:root:Epoch 9     loss=2.4597 [7.3 s]	dev=(HR@5:0.3847,NDCG@5:0.2717) [0.2 s] *
+INFO:root:Epoch 10    loss=2.3859 [8.3 s]	dev=(HR@5:0.3891,NDCG@5:0.2749) [0.2 s] *
+INFO:root:Epoch 11    loss=2.3279 [8.2 s]	dev=(HR@5:0.3977,NDCG@5:0.2821) [0.2 s] *
+INFO:root:Epoch 12    loss=2.2822 [8.7 s]	dev=(HR@5:0.4034,NDCG@5:0.2869) [0.2 s] *
+INFO:root:Epoch 13    loss=2.2444 [9.0 s]	dev=(HR@5:0.4022,NDCG@5:0.2870) [0.2 s] *
+INFO:root:Epoch 14    loss=2.2135 [8.9 s]	dev=(HR@5:0.4035,NDCG@5:0.2876) [0.2 s] *
+INFO:root:Epoch 15    loss=2.1866 [8.9 s]	dev=(HR@5:0.4017,NDCG@5:0.2868) [0.2 s]
+INFO:root:Epoch 16    loss=2.1681 [8.8 s]	dev=(HR@5:0.4016,NDCG@5:0.2861) [0.2 s]
+INFO:root:Epoch 17    loss=2.1523 [8.4 s]	dev=(HR@5:0.4078,NDCG@5:0.2902) [0.2 s] *
+INFO:root:Epoch 18    loss=2.1370 [8.2 s]	dev=(HR@5:0.4066,NDCG@5:0.2898) [0.2 s]
+INFO:root:Epoch 19    loss=2.1024 [8.4 s]	dev=(HR@5:0.4047,NDCG@5:0.2885) [0.2 s]
+INFO:root:Epoch 20    loss=2.1077 [8.0 s]	dev=(HR@5:0.4105,NDCG@5:0.2930) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.4105,NDCG@5:0.2930) [165.6 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4105,NDCG@5:0.2930,HR@10:0.5269,NDCG@10:0.3308,HR@20:0.6367,NDCG@20:0.3586,HR@50:0.8109,NDCG@50:0.3929)
+INFO:root:
+Test After Training: (HR@5:0.3399,NDCG@5:0.2339,HR@10:0.4605,NDCG@10:0.2730,HR@20:0.5699,NDCG@20:0.3006,HR@50:0.7687,NDCG@50:0.3396)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:06:38 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:08:51 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=0.6049 [8.9 s]	dev=(HR@5:0.1992,NDCG@5:0.1308) [0.2 s] *
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:09:05 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:09:57 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 3                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=1.1357 [8.3 s]	dev=(HR@5:0.2281,NDCG@5:0.1519) [0.2 s] *
+INFO:root:Epoch 2     loss=0.9963 [7.3 s]	dev=(HR@5:0.2791,NDCG@5:0.1964) [0.2 s] *
+INFO:root:Epoch 3     loss=0.8551 [7.4 s]	dev=(HR@5:0.3203,NDCG@5:0.2245) [0.2 s] *
+INFO:root:Epoch 4     loss=0.7555 [7.5 s]	dev=(HR@5:0.3415,NDCG@5:0.2430) [0.2 s] *
+INFO:root:Epoch 5     loss=0.6787 [7.5 s]	dev=(HR@5:0.3490,NDCG@5:0.2484) [0.2 s] *
+INFO:root:Epoch 6     loss=0.6265 [7.7 s]	dev=(HR@5:0.3600,NDCG@5:0.2559) [0.2 s] *
+INFO:root:Epoch 7     loss=0.5811 [7.6 s]	dev=(HR@5:0.3617,NDCG@5:0.2564) [0.2 s] *
+INFO:root:Epoch 8     loss=0.5498 [7.6 s]	dev=(HR@5:0.3707,NDCG@5:0.2618) [0.2 s] *
+INFO:root:Epoch 9     loss=0.5306 [7.7 s]	dev=(HR@5:0.3744,NDCG@5:0.2660) [0.2 s] *
+INFO:root:Epoch 10    loss=0.5087 [7.8 s]	dev=(HR@5:0.3782,NDCG@5:0.2672) [0.2 s] *
+INFO:root:Epoch 11    loss=0.4914 [8.6 s]	dev=(HR@5:0.3802,NDCG@5:0.2708) [0.2 s] *
+INFO:root:Epoch 12    loss=0.4782 [8.3 s]	dev=(HR@5:0.3827,NDCG@5:0.2728) [0.2 s] *
+INFO:root:Epoch 13    loss=0.4681 [8.2 s]	dev=(HR@5:0.3869,NDCG@5:0.2750) [0.2 s] *
+INFO:root:Epoch 14    loss=0.4618 [8.4 s]	dev=(HR@5:0.3898,NDCG@5:0.2779) [0.2 s] *
+INFO:root:Epoch 15    loss=0.4521 [8.3 s]	dev=(HR@5:0.3880,NDCG@5:0.2753) [0.2 s]
+INFO:root:Epoch 16    loss=0.4489 [8.0 s]	dev=(HR@5:0.3916,NDCG@5:0.2789) [0.2 s] *
+INFO:root:Epoch 17    loss=0.4448 [8.2 s]	dev=(HR@5:0.3964,NDCG@5:0.2827) [0.2 s] *
+INFO:root:Epoch 18    loss=0.4398 [8.4 s]	dev=(HR@5:0.3913,NDCG@5:0.2779) [0.2 s]
+INFO:root:Epoch 19    loss=0.4332 [8.1 s]	dev=(HR@5:0.3956,NDCG@5:0.2827) [0.2 s]
+INFO:root:Epoch 20    loss=0.4273 [8.1 s]	dev=(HR@5:0.3980,NDCG@5:0.2828) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.3980,NDCG@5:0.2828) [162.6 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3980,NDCG@5:0.2828,HR@10:0.5060,NDCG@10:0.3181,HR@20:0.6104,NDCG@20:0.3444,HR@50:0.8040,NDCG@50:0.3826)
+INFO:root:
+Test After Training: (HR@5:0.3312,NDCG@5:0.2294,HR@10:0.4410,NDCG@10:0.2650,HR@20:0.5543,NDCG@20:0.2935,HR@50:0.7743,NDCG@50:0.3368)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:12:43 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:12:57 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=0.6049 [8.5 s]	dev=(HR@5:0.1990,NDCG@5:0.1307) [0.2 s] *
+INFO:root:Epoch 2     loss=0.5468 [8.4 s]	dev=(HR@5:0.2389,NDCG@5:0.1628) [0.2 s] *
+INFO:root:Epoch 3     loss=0.4777 [8.4 s]	dev=(HR@5:0.2795,NDCG@5:0.1932) [0.2 s] *
+INFO:root:Epoch 4     loss=0.4372 [8.6 s]	dev=(HR@5:0.3072,NDCG@5:0.2162) [0.2 s] *
+INFO:root:Epoch 5     loss=0.4069 [8.4 s]	dev=(HR@5:0.3261,NDCG@5:0.2298) [0.2 s] *
+INFO:root:Epoch 6     loss=0.3852 [8.3 s]	dev=(HR@5:0.3345,NDCG@5:0.2355) [0.2 s] *
+INFO:root:Epoch 7     loss=0.3732 [8.9 s]	dev=(HR@5:0.3378,NDCG@5:0.2386) [0.2 s] *
+INFO:root:Epoch 8     loss=0.3633 [8.9 s]	dev=(HR@5:0.3426,NDCG@5:0.2438) [0.2 s] *
+INFO:root:Epoch 9     loss=0.3519 [8.6 s]	dev=(HR@5:0.3440,NDCG@5:0.2432) [0.2 s]
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:14:23 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:14:26 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=3.8828 [8.9 s]	dev=(HR@5:0.2872,NDCG@5:0.1957) [0.2 s] *
+INFO:root:Epoch 2     loss=3.5101 [8.4 s]	dev=(HR@5:0.3141,NDCG@5:0.2198) [0.2 s] *
+INFO:root:Epoch 3     loss=3.2417 [8.2 s]	dev=(HR@5:0.3361,NDCG@5:0.2342) [0.2 s] *
+INFO:root:Epoch 4     loss=3.0474 [8.3 s]	dev=(HR@5:0.3441,NDCG@5:0.2428) [0.2 s] *
+INFO:root:Epoch 5     loss=2.8926 [8.8 s]	dev=(HR@5:0.3538,NDCG@5:0.2516) [0.2 s] *
+INFO:root:Epoch 6     loss=2.7555 [8.8 s]	dev=(HR@5:0.3660,NDCG@5:0.2592) [0.2 s] *
+INFO:root:Epoch 7     loss=2.6415 [8.2 s]	dev=(HR@5:0.3725,NDCG@5:0.2650) [0.2 s] *
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:15:35 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:29:22 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:29:29 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:29:37 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=0.6049 [8.7 s]	dev=(HR@5:0.1992,NDCG@5:0.1308) [0.2 s] *
+INFO:root:Epoch 2     loss=0.5469 [7.6 s]	dev=(HR@5:0.2388,NDCG@5:0.1628) [0.2 s] *
+INFO:root:Epoch 3     loss=0.4778 [7.5 s]	dev=(HR@5:0.2781,NDCG@5:0.1925) [0.2 s] *
+INFO:root:Epoch 4     loss=0.4374 [7.7 s]	dev=(HR@5:0.3060,NDCG@5:0.2160) [0.2 s] *
+INFO:root:Epoch 5     loss=0.4069 [7.8 s]	dev=(HR@5:0.3278,NDCG@5:0.2302) [0.2 s] *
+INFO:root:Epoch 6     loss=0.3852 [7.8 s]	dev=(HR@5:0.3366,NDCG@5:0.2366) [0.2 s] *
+INFO:root:Epoch 7     loss=0.3733 [7.6 s]	dev=(HR@5:0.3364,NDCG@5:0.2380) [0.2 s] *
+INFO:root:Epoch 8     loss=0.3634 [7.6 s]	dev=(HR@5:0.3410,NDCG@5:0.2425) [0.2 s] *
+INFO:root:Epoch 9     loss=0.3522 [7.7 s]	dev=(HR@5:0.3437,NDCG@5:0.2431) [0.2 s] *
+INFO:root:Epoch 10    loss=0.3468 [7.6 s]	dev=(HR@5:0.3543,NDCG@5:0.2512) [0.2 s] *
+INFO:root:Epoch 11    loss=0.3381 [8.2 s]	dev=(HR@5:0.3581,NDCG@5:0.2543) [0.2 s] *
+INFO:root:Epoch 12    loss=0.3294 [8.3 s]	dev=(HR@5:0.3627,NDCG@5:0.2563) [0.2 s] *
+INFO:root:Epoch 13    loss=0.3280 [8.6 s]	dev=(HR@5:0.3701,NDCG@5:0.2623) [0.2 s] *
+INFO:root:Epoch 14    loss=0.3244 [8.6 s]	dev=(HR@5:0.3761,NDCG@5:0.2650) [0.2 s] *
+INFO:root:Epoch 15    loss=0.3200 [8.4 s]	dev=(HR@5:0.3748,NDCG@5:0.2647) [0.2 s]
+INFO:root:Epoch 16    loss=0.3172 [8.4 s]	dev=(HR@5:0.3750,NDCG@5:0.2668) [0.2 s] *
+INFO:root:Epoch 17    loss=0.3149 [8.5 s]	dev=(HR@5:0.3771,NDCG@5:0.2679) [0.2 s] *
+INFO:root:Epoch 18    loss=0.3113 [8.7 s]	dev=(HR@5:0.3748,NDCG@5:0.2657) [0.2 s]
+INFO:root:Epoch 19    loss=0.3092 [8.3 s]	dev=(HR@5:0.3810,NDCG@5:0.2710) [0.2 s] *
+INFO:root:Epoch 20    loss=0.3053 [8.4 s]	dev=(HR@5:0.3819,NDCG@5:0.2710) [0.2 s]
+INFO:root:
+Best Iter(dev)=   19	 dev=(HR@5:0.3810,NDCG@5:0.2710) [165.7 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3810,NDCG@5:0.2710,HR@10:0.4906,NDCG@10:0.3066,HR@20:0.5927,NDCG@20:0.3324,HR@50:0.7852,NDCG@50:0.3703)
+INFO:root:
+Test After Training: (HR@5:0.3167,NDCG@5:0.2171,HR@10:0.4283,NDCG@10:0.2535,HR@20:0.5361,NDCG@20:0.2807,HR@50:0.7608,NDCG@50:0.3250)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:32:27 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:33:40 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=3.8828 [8.1 s]	dev=(HR@5:0.2872,NDCG@5:0.1957) [0.2 s] *
+INFO:root:Epoch 2     loss=3.5101 [7.3 s]	dev=(HR@5:0.3140,NDCG@5:0.2197) [0.2 s] *
+INFO:root:Epoch 3     loss=3.2417 [7.5 s]	dev=(HR@5:0.3360,NDCG@5:0.2341) [0.2 s] *
+INFO:root:Epoch 4     loss=3.0474 [7.3 s]	dev=(HR@5:0.3438,NDCG@5:0.2427) [0.2 s] *
+INFO:root:Epoch 5     loss=2.8927 [7.3 s]	dev=(HR@5:0.3543,NDCG@5:0.2518) [0.2 s] *
+INFO:root:Epoch 6     loss=2.7555 [7.4 s]	dev=(HR@5:0.3658,NDCG@5:0.2593) [0.2 s] *
+INFO:root:Epoch 7     loss=2.6415 [7.5 s]	dev=(HR@5:0.3724,NDCG@5:0.2649) [0.2 s] *
+INFO:root:Epoch 8     loss=2.5449 [7.4 s]	dev=(HR@5:0.3799,NDCG@5:0.2693) [0.2 s] *
+INFO:root:Epoch 9     loss=2.4598 [7.6 s]	dev=(HR@5:0.3833,NDCG@5:0.2709) [0.2 s] *
+INFO:root:Epoch 10    loss=2.3859 [7.8 s]	dev=(HR@5:0.3888,NDCG@5:0.2747) [0.2 s] *
+INFO:root:Epoch 11    loss=2.3279 [8.2 s]	dev=(HR@5:0.3976,NDCG@5:0.2819) [0.2 s] *
+INFO:root:Epoch 12    loss=2.2824 [8.1 s]	dev=(HR@5:0.4023,NDCG@5:0.2864) [0.2 s] *
+INFO:root:Epoch 13    loss=2.2444 [8.1 s]	dev=(HR@5:0.4028,NDCG@5:0.2875) [0.2 s] *
+INFO:root:Epoch 14    loss=2.2135 [8.4 s]	dev=(HR@5:0.4039,NDCG@5:0.2879) [0.2 s] *
+INFO:root:Epoch 15    loss=2.1866 [8.4 s]	dev=(HR@5:0.4013,NDCG@5:0.2864) [0.2 s]
+INFO:root:Epoch 16    loss=2.1681 [7.8 s]	dev=(HR@5:0.4009,NDCG@5:0.2856) [0.2 s]
+INFO:root:Epoch 17    loss=2.1523 [7.8 s]	dev=(HR@5:0.4086,NDCG@5:0.2904) [0.2 s] *
+INFO:root:Epoch 18    loss=2.1370 [8.1 s]	dev=(HR@5:0.4066,NDCG@5:0.2898) [0.2 s]
+INFO:root:Epoch 19    loss=2.1023 [8.1 s]	dev=(HR@5:0.4047,NDCG@5:0.2885) [0.2 s]
+INFO:root:Epoch 20    loss=2.1077 [7.9 s]	dev=(HR@5:0.4106,NDCG@5:0.2930) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.4106,NDCG@5:0.2930) [159.6 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4106,NDCG@5:0.2930,HR@10:0.5267,NDCG@10:0.3308,HR@20:0.6362,NDCG@20:0.3585,HR@50:0.8109,NDCG@50:0.3929)
+INFO:root:
+Test After Training: (HR@5:0.3404,NDCG@5:0.2339,HR@10:0.4604,NDCG@10:0.2728,HR@20:0.5702,NDCG@20:0.3005,HR@50:0.7693,NDCG@50:0.3396)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:36:23 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:59:53 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498369
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=3.7841 [8.5 s]	dev=(HR@5:0.2830,NDCG@5:0.1893) [0.2 s] *
+INFO:root:Epoch 2     loss=3.3115 [7.6 s]	dev=(HR@5:0.2114,NDCG@5:0.1508) [0.2 s]
+INFO:root:Epoch 3     loss=2.9850 [7.8 s]	dev=(HR@5:0.1792,NDCG@5:0.1282) [0.2 s]
+INFO:root:Epoch 4     loss=2.7807 [7.6 s]	dev=(HR@5:0.1811,NDCG@5:0.1305) [0.2 s]
+INFO:root:Epoch 5     loss=2.6315 [7.7 s]	dev=(HR@5:0.1779,NDCG@5:0.1264) [0.2 s]
+INFO:root:Epoch 6     loss=2.5223 [7.8 s]	dev=(HR@5:0.1734,NDCG@5:0.1233) [0.2 s]
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 15:00:45 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 15:01:43 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498369
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=3.8713 [9.0 s]	dev=(HR@5:0.2841,NDCG@5:0.1928) [0.2 s] *
+INFO:root:Epoch 2     loss=3.4116 [7.7 s]	dev=(HR@5:0.3151,NDCG@5:0.2181) [0.2 s] *
+INFO:root:Epoch 3     loss=3.0544 [7.5 s]	dev=(HR@5:0.3317,NDCG@5:0.2320) [0.2 s] *
+INFO:root:Epoch 4     loss=2.8122 [7.4 s]	dev=(HR@5:0.3390,NDCG@5:0.2398) [0.2 s] *
+INFO:root:Epoch 5     loss=2.6113 [7.6 s]	dev=(HR@5:0.3542,NDCG@5:0.2508) [0.2 s] *
+INFO:root:Epoch 6     loss=2.4402 [7.7 s]	dev=(HR@5:0.3626,NDCG@5:0.2558) [0.2 s] *
+INFO:root:Epoch 7     loss=2.2911 [7.6 s]	dev=(HR@5:0.3692,NDCG@5:0.2624) [0.2 s] *
+INFO:root:Epoch 8     loss=2.1602 [7.5 s]	dev=(HR@5:0.3832,NDCG@5:0.2710) [0.2 s] *
+INFO:root:Epoch 9     loss=2.0439 [7.6 s]	dev=(HR@5:0.3790,NDCG@5:0.2687) [0.2 s]
+INFO:root:Epoch 10    loss=1.9425 [7.9 s]	dev=(HR@5:0.3841,NDCG@5:0.2713) [0.2 s] *
+INFO:root:Epoch 11    loss=1.8494 [8.3 s]	dev=(HR@5:0.3937,NDCG@5:0.2797) [0.2 s] *
+INFO:root:Epoch 12    loss=1.7706 [8.4 s]	dev=(HR@5:0.3960,NDCG@5:0.2823) [0.2 s] *
+INFO:root:Epoch 13    loss=1.7019 [8.4 s]	dev=(HR@5:0.4009,NDCG@5:0.2854) [0.2 s] *
+INFO:root:Epoch 14    loss=1.6385 [8.5 s]	dev=(HR@5:0.3960,NDCG@5:0.2828) [0.2 s]
+INFO:root:Epoch 15    loss=1.5808 [8.2 s]	dev=(HR@5:0.3992,NDCG@5:0.2843) [0.2 s]
+INFO:root:Epoch 16    loss=1.5367 [8.1 s]	dev=(HR@5:0.4014,NDCG@5:0.2852) [0.2 s]
+INFO:root:Epoch 17    loss=1.4901 [8.4 s]	dev=(HR@5:0.4012,NDCG@5:0.2857) [0.2 s] *
+INFO:root:Epoch 18    loss=1.4520 [8.5 s]	dev=(HR@5:0.4030,NDCG@5:0.2870) [0.2 s] *
+INFO:root:Epoch 19    loss=1.4009 [8.3 s]	dev=(HR@5:0.4022,NDCG@5:0.2870) [0.2 s]
+INFO:root:Epoch 20    loss=1.3812 [8.1 s]	dev=(HR@5:0.4057,NDCG@5:0.2913) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.4057,NDCG@5:0.2913) [164.7 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4057,NDCG@5:0.2913,HR@10:0.5248,NDCG@10:0.3299,HR@20:0.6318,NDCG@20:0.3570,HR@50:0.8120,NDCG@50:0.3926)
+INFO:root:
+Test After Training: (HR@5:0.3324,NDCG@5:0.2293,HR@10:0.4517,NDCG@10:0.2680,HR@20:0.5611,NDCG@20:0.2957,HR@50:0.7665,NDCG@50:0.3362)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 15:04:33 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 15:04:51 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0483,NDCG@5:0.0283,HR@10:0.0989,NDCG@10:0.0444,HR@20:0.1971,NDCG@20:0.0690,HR@50:0.4968,NDCG@50:0.1276)
+INFO:root:Epoch 1     loss=3.8713 [8.4 s]	dev=(HR@5:0.2779,NDCG@5:0.1887) [0.2 s] *
+INFO:root:Epoch 2     loss=3.4116 [7.4 s]	dev=(HR@5:0.3103,NDCG@5:0.2153) [0.2 s] *
+INFO:root:Epoch 3     loss=3.0544 [8.0 s]	dev=(HR@5:0.3290,NDCG@5:0.2301) [0.2 s] *
+INFO:root:Epoch 4     loss=2.8121 [8.6 s]	dev=(HR@5:0.3370,NDCG@5:0.2383) [0.2 s] *
+INFO:root:Epoch 5     loss=2.6113 [8.5 s]	dev=(HR@5:0.3519,NDCG@5:0.2491) [0.2 s] *
+INFO:root:Epoch 6     loss=2.4403 [8.8 s]	dev=(HR@5:0.3596,NDCG@5:0.2530) [0.2 s] *
+INFO:root:Epoch 7     loss=2.2912 [8.5 s]	dev=(HR@5:0.3683,NDCG@5:0.2613) [0.2 s] *
+INFO:root:Epoch 8     loss=2.1600 [8.9 s]	dev=(HR@5:0.3803,NDCG@5:0.2696) [0.2 s] *
+INFO:root:Epoch 9     loss=2.0435 [8.6 s]	dev=(HR@5:0.3799,NDCG@5:0.2693) [0.2 s]
+INFO:root:Epoch 10    loss=1.9425 [8.5 s]	dev=(HR@5:0.3835,NDCG@5:0.2716) [0.2 s] *
+INFO:root:Epoch 11    loss=1.8494 [8.3 s]	dev=(HR@5:0.3940,NDCG@5:0.2802) [0.2 s] *
+INFO:root:Epoch 12    loss=1.7707 [8.4 s]	dev=(HR@5:0.3960,NDCG@5:0.2823) [0.2 s] *
+INFO:root:Epoch 13    loss=1.7020 [8.2 s]	dev=(HR@5:0.4018,NDCG@5:0.2859) [0.2 s] *
+INFO:root:Epoch 14    loss=1.6386 [8.3 s]	dev=(HR@5:0.3990,NDCG@5:0.2839) [0.2 s]
+INFO:root:Epoch 15    loss=1.5809 [8.1 s]	dev=(HR@5:0.4019,NDCG@5:0.2855) [0.2 s]
+INFO:root:Epoch 16    loss=1.5368 [8.2 s]	dev=(HR@5:0.4000,NDCG@5:0.2849) [0.2 s]
+INFO:root:Epoch 17    loss=1.4902 [8.2 s]	dev=(HR@5:0.4021,NDCG@5:0.2866) [0.2 s] *
+INFO:root:Epoch 18    loss=1.4520 [8.2 s]	dev=(HR@5:0.4038,NDCG@5:0.2874) [0.2 s] *
+INFO:root:Epoch 19    loss=1.4008 [8.2 s]	dev=(HR@5:0.4047,NDCG@5:0.2886) [0.2 s] *
+INFO:root:Epoch 20    loss=1.3811 [8.3 s]	dev=(HR@5:0.4089,NDCG@5:0.2932) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.4089,NDCG@5:0.2932) [170.4 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4089,NDCG@5:0.2932,HR@10:0.5261,NDCG@10:0.3312,HR@20:0.6324,NDCG@20:0.3580,HR@50:0.8118,NDCG@50:0.3934)
+INFO:root:
+Test After Training: (HR@5:0.3363,NDCG@5:0.2310,HR@10:0.4545,NDCG@10:0.2694,HR@20:0.5619,NDCG@20:0.2965,HR@50:0.7679,NDCG@50:0.3371)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 15:07:46 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-22 21:04:59 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=3.8828 [8.3 s]	dev=(HR@5:0.2872,NDCG@5:0.1958) [0.2 s] *
+INFO:root:Epoch 2     loss=3.5100 [7.0 s]	dev=(HR@5:0.3140,NDCG@5:0.2198) [0.2 s] *
+INFO:root:Epoch 3     loss=3.2415 [7.1 s]	dev=(HR@5:0.3361,NDCG@5:0.2342) [0.2 s] *
+INFO:root:Epoch 4     loss=3.0473 [7.0 s]	dev=(HR@5:0.3436,NDCG@5:0.2427) [0.2 s] *
+INFO:root:Epoch 5     loss=2.8925 [7.0 s]	dev=(HR@5:0.3539,NDCG@5:0.2516) [0.2 s] *
+INFO:root:Epoch 6     loss=2.7553 [7.4 s]	dev=(HR@5:0.3656,NDCG@5:0.2590) [0.2 s] *
+INFO:root:Epoch 7     loss=2.6413 [7.2 s]	dev=(HR@5:0.3731,NDCG@5:0.2652) [0.2 s] *
+INFO:root:Epoch 8     loss=2.5446 [7.4 s]	dev=(HR@5:0.3793,NDCG@5:0.2689) [0.2 s] *
+INFO:root:Epoch 9     loss=2.4590 [7.2 s]	dev=(HR@5:0.3836,NDCG@5:0.2711) [0.2 s] *
+INFO:root:Epoch 10    loss=2.3855 [7.1 s]	dev=(HR@5:0.3888,NDCG@5:0.2747) [0.2 s] *
+INFO:root:Epoch 11    loss=2.3274 [7.1 s]	dev=(HR@5:0.3977,NDCG@5:0.2820) [0.2 s] *
+INFO:root:Epoch 12    loss=2.2819 [7.1 s]	dev=(HR@5:0.4022,NDCG@5:0.2862) [0.2 s] *
+INFO:root:Epoch 13    loss=2.2438 [7.1 s]	dev=(HR@5:0.4026,NDCG@5:0.2875) [0.2 s] *
+INFO:root:Epoch 14    loss=2.2128 [7.0 s]	dev=(HR@5:0.4038,NDCG@5:0.2878) [0.2 s] *
+INFO:root:Epoch 15    loss=2.1859 [7.3 s]	dev=(HR@5:0.4007,NDCG@5:0.2862) [0.2 s]
+INFO:root:Epoch 16    loss=2.1678 [7.2 s]	dev=(HR@5:0.4009,NDCG@5:0.2857) [0.2 s]
+INFO:root:Epoch 17    loss=2.1520 [7.2 s]	dev=(HR@5:0.4077,NDCG@5:0.2900) [0.2 s] *
+INFO:root:Epoch 18    loss=2.1365 [7.2 s]	dev=(HR@5:0.4060,NDCG@5:0.2896) [0.2 s]
+INFO:root:Epoch 19    loss=2.1019 [7.2 s]	dev=(HR@5:0.4049,NDCG@5:0.2884) [0.2 s]
+INFO:root:Epoch 20    loss=2.1072 [7.3 s]	dev=(HR@5:0.4103,NDCG@5:0.2930) [0.2 s] *
+INFO:root:Epoch 21    loss=2.0867 [7.0 s]	dev=(HR@5:0.4086,NDCG@5:0.2907) [0.2 s]
+INFO:root:Epoch 22    loss=2.0716 [7.2 s]	dev=(HR@5:0.4083,NDCG@5:0.2915) [0.2 s]
+INFO:root:Epoch 23    loss=2.0608 [7.1 s]	dev=(HR@5:0.4094,NDCG@5:0.2919) [0.2 s]
+INFO:root:Epoch 24    loss=2.0552 [7.5 s]	dev=(HR@5:0.4077,NDCG@5:0.2904) [0.2 s]
+INFO:root:Epoch 25    loss=2.0365 [7.6 s]	dev=(HR@5:0.4076,NDCG@5:0.2897) [0.2 s]
+INFO:root:Epoch 26    loss=2.0480 [7.6 s]	dev=(HR@5:0.4096,NDCG@5:0.2929) [0.2 s]
+INFO:root:Epoch 27    loss=2.0265 [7.8 s]	dev=(HR@5:0.4116,NDCG@5:0.2934) [0.2 s] *
+INFO:root:Epoch 28    loss=2.0307 [8.3 s]	dev=(HR@5:0.4124,NDCG@5:0.2938) [0.2 s] *
+INFO:root:Epoch 29    loss=2.0250 [7.9 s]	dev=(HR@5:0.4120,NDCG@5:0.2947) [0.2 s] *
+INFO:root:Epoch 30    loss=2.0217 [7.1 s]	dev=(HR@5:0.4115,NDCG@5:0.2946) [0.2 s]
+INFO:root:Epoch 31    loss=2.0077 [7.0 s]	dev=(HR@5:0.4122,NDCG@5:0.2949) [0.2 s] *
+INFO:root:Epoch 32    loss=2.0030 [7.7 s]	dev=(HR@5:0.4081,NDCG@5:0.2923) [0.2 s]
+INFO:root:Epoch 33    loss=2.0029 [7.5 s]	dev=(HR@5:0.4113,NDCG@5:0.2945) [0.2 s]
+INFO:root:Epoch 34    loss=1.9995 [7.5 s]	dev=(HR@5:0.4118,NDCG@5:0.2959) [0.2 s] *
+INFO:root:Epoch 35    loss=1.9872 [7.7 s]	dev=(HR@5:0.4120,NDCG@5:0.2951) [0.2 s]
+INFO:root:Epoch 36    loss=1.9961 [7.5 s]	dev=(HR@5:0.4116,NDCG@5:0.2943) [0.2 s]
+INFO:root:Epoch 37    loss=1.9809 [7.6 s]	dev=(HR@5:0.4125,NDCG@5:0.2957) [0.2 s]
+INFO:root:Epoch 38    loss=1.9863 [7.9 s]	dev=(HR@5:0.4150,NDCG@5:0.2966) [0.2 s] *
+INFO:root:Epoch 39    loss=1.9772 [7.7 s]	dev=(HR@5:0.4136,NDCG@5:0.2962) [0.2 s]
+INFO:root:Epoch 40    loss=1.9798 [7.6 s]	dev=(HR@5:0.4109,NDCG@5:0.2938) [0.2 s]
+INFO:root:Epoch 41    loss=1.9641 [7.7 s]	dev=(HR@5:0.4126,NDCG@5:0.2956) [0.2 s]
+INFO:root:Epoch 42    loss=1.9813 [7.7 s]	dev=(HR@5:0.4159,NDCG@5:0.2975) [0.2 s] *
+INFO:root:Epoch 43    loss=1.9715 [7.8 s]	dev=(HR@5:0.4142,NDCG@5:0.2965) [0.2 s]
+INFO:root:Epoch 44    loss=1.9715 [7.7 s]	dev=(HR@5:0.4166,NDCG@5:0.2979) [0.2 s] *
+INFO:root:Epoch 45    loss=1.9602 [7.7 s]	dev=(HR@5:0.4150,NDCG@5:0.2970) [0.2 s]
+INFO:root:Epoch 46    loss=1.9618 [7.5 s]	dev=(HR@5:0.4139,NDCG@5:0.2974) [0.2 s]
+INFO:root:Epoch 47    loss=1.9593 [7.5 s]	dev=(HR@5:0.4147,NDCG@5:0.2975) [0.2 s]
+INFO:root:Epoch 48    loss=1.9536 [7.8 s]	dev=(HR@5:0.4148,NDCG@5:0.2978) [0.2 s]
+INFO:root:Epoch 49    loss=1.9545 [7.6 s]	dev=(HR@5:0.4143,NDCG@5:0.2965) [0.2 s]
+INFO:root:Epoch 50    loss=1.9532 [7.6 s]	dev=(HR@5:0.4160,NDCG@5:0.2982) [0.2 s] *
+INFO:root:Epoch 51    loss=1.9483 [7.7 s]	dev=(HR@5:0.4150,NDCG@5:0.2978) [0.2 s]
+INFO:root:Epoch 52    loss=1.9456 [7.6 s]	dev=(HR@5:0.4137,NDCG@5:0.2964) [0.2 s]
+INFO:root:Epoch 53    loss=1.9573 [7.6 s]	dev=(HR@5:0.4160,NDCG@5:0.2980) [0.2 s]
+INFO:root:Epoch 54    loss=1.9485 [7.6 s]	dev=(HR@5:0.4154,NDCG@5:0.2982) [0.2 s] *
+INFO:root:Epoch 55    loss=1.9427 [7.7 s]	dev=(HR@5:0.4128,NDCG@5:0.2969) [0.2 s]
+INFO:root:Epoch 56    loss=1.9413 [7.7 s]	dev=(HR@5:0.4160,NDCG@5:0.2984) [0.2 s] *
+INFO:root:Epoch 57    loss=1.9424 [7.6 s]	dev=(HR@5:0.4158,NDCG@5:0.2986) [0.2 s] *
+INFO:root:Epoch 58    loss=1.9385 [7.8 s]	dev=(HR@5:0.4144,NDCG@5:0.2974) [0.2 s]
+INFO:root:Epoch 59    loss=1.9442 [8.4 s]	dev=(HR@5:0.4151,NDCG@5:0.2974) [0.3 s]
+INFO:root:Epoch 60    loss=1.9303 [18.3 s]	dev=(HR@5:0.4166,NDCG@5:0.2985) [0.2 s]
+INFO:root:Epoch 61    loss=1.9361 [7.6 s]	dev=(HR@5:0.4173,NDCG@5:0.2993) [0.2 s] *
+INFO:root:Epoch 62    loss=1.9405 [7.8 s]	dev=(HR@5:0.4176,NDCG@5:0.2998) [0.2 s] *
+INFO:root:Epoch 63    loss=1.9310 [7.8 s]	dev=(HR@5:0.4175,NDCG@5:0.3000) [0.2 s] *
+INFO:root:Epoch 64    loss=1.9329 [7.9 s]	dev=(HR@5:0.4199,NDCG@5:0.3013) [0.2 s] *
+INFO:root:Epoch 65    loss=1.9210 [8.0 s]	dev=(HR@5:0.4183,NDCG@5:0.3003) [0.2 s]
+INFO:root:Epoch 66    loss=1.9260 [7.7 s]	dev=(HR@5:0.4179,NDCG@5:0.2999) [0.2 s]
+INFO:root:Epoch 67    loss=1.9285 [7.7 s]	dev=(HR@5:0.4194,NDCG@5:0.3007) [0.2 s]
+INFO:root:Epoch 68    loss=1.9184 [7.5 s]	dev=(HR@5:0.4192,NDCG@5:0.3008) [0.2 s]
+INFO:root:Epoch 69    loss=1.9214 [7.8 s]	dev=(HR@5:0.4189,NDCG@5:0.3010) [0.2 s]
+INFO:root:Epoch 70    loss=1.9166 [8.2 s]	dev=(HR@5:0.4181,NDCG@5:0.3000) [0.2 s]
+INFO:root:Epoch 71    loss=1.9201 [7.7 s]	dev=(HR@5:0.4174,NDCG@5:0.2992) [0.2 s]
+INFO:root:Epoch 72    loss=1.9120 [7.6 s]	dev=(HR@5:0.4174,NDCG@5:0.2993) [0.2 s]
+INFO:root:Epoch 73    loss=1.9230 [7.7 s]	dev=(HR@5:0.4180,NDCG@5:0.2992) [0.2 s]
+INFO:root:Early stop at 73 based on dev result.
+INFO:root:
+Best Iter(dev)=   64	 dev=(HR@5:0.4199,NDCG@5:0.3013) [574.1 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.4199,NDCG@5:0.3013,HR@10:0.5361,NDCG@10:0.3391,HR@20:0.6413,NDCG@20:0.3657,HR@50:0.8175,NDCG@50:0.4005)
+INFO:root:
+Test After Training: (HR@5:0.3460,NDCG@5:0.2384,HR@10:0.4688,NDCG@10:0.2784,HR@20:0.5787,NDCG@20:0.3061,HR@50:0.7748,NDCG@50:0.3447)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-22 21:14:38 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v3', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-22 21:17:24 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 8                   
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1498368
+INFO:root:HCCF_v3(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0499,NDCG@5:0.0292,HR@10:0.1009,NDCG@10:0.0454,HR@20:0.1992,NDCG@20:0.0699,HR@50:0.4970,NDCG@50:0.1280)
+INFO:root:Epoch 1     loss=4.0683 [8.5 s]	dev=(HR@5:0.2343,NDCG@5:0.1572) [0.2 s] *
+INFO:root:Epoch 2     loss=3.5428 [7.4 s]	dev=(HR@5:0.3105,NDCG@5:0.2150) [0.2 s] *
+INFO:root:Epoch 3     loss=3.3281 [7.2 s]	dev=(HR@5:0.3260,NDCG@5:0.2269) [0.2 s] *
+INFO:root:Epoch 4     loss=3.2080 [7.4 s]	dev=(HR@5:0.3391,NDCG@5:0.2365) [0.2 s] *
+INFO:root:Epoch 5     loss=3.1076 [7.4 s]	dev=(HR@5:0.3463,NDCG@5:0.2422) [0.2 s] *
+INFO:root:Epoch 6     loss=3.0189 [7.4 s]	dev=(HR@5:0.3560,NDCG@5:0.2497) [0.2 s] *
+INFO:root:Epoch 7     loss=2.9438 [7.5 s]	dev=(HR@5:0.3571,NDCG@5:0.2515) [0.2 s] *
+INFO:root:Epoch 8     loss=2.8716 [7.5 s]	dev=(HR@5:0.3716,NDCG@5:0.2620) [0.2 s] *
+INFO:root:Epoch 9     loss=2.8092 [7.2 s]	dev=(HR@5:0.3708,NDCG@5:0.2618) [0.2 s]
+INFO:root:Epoch 10    loss=2.7423 [7.3 s]	dev=(HR@5:0.3719,NDCG@5:0.2625) [0.2 s] *
+INFO:root:Epoch 11    loss=2.6865 [7.4 s]	dev=(HR@5:0.3832,NDCG@5:0.2713) [0.2 s] *
+INFO:root:Epoch 12    loss=2.6415 [7.6 s]	dev=(HR@5:0.3870,NDCG@5:0.2739) [0.2 s] *
+INFO:root:Epoch 13    loss=2.6035 [8.0 s]	dev=(HR@5:0.3852,NDCG@5:0.2733) [0.2 s]
+INFO:root:Epoch 14    loss=2.5759 [7.9 s]	dev=(HR@5:0.3912,NDCG@5:0.2782) [0.2 s] *
+INFO:root:Epoch 15    loss=2.5355 [8.0 s]	dev=(HR@5:0.3911,NDCG@5:0.2781) [0.2 s]
+INFO:root:Epoch 16    loss=2.5182 [7.9 s]	dev=(HR@5:0.3947,NDCG@5:0.2800) [0.2 s] *
+INFO:root:Epoch 17    loss=2.4919 [8.1 s]	dev=(HR@5:0.3967,NDCG@5:0.2811) [0.2 s] *
+INFO:root:Epoch 18    loss=2.4737 [8.0 s]	dev=(HR@5:0.3962,NDCG@5:0.2816) [0.2 s] *
+INFO:root:Epoch 19    loss=2.4430 [8.0 s]	dev=(HR@5:0.3976,NDCG@5:0.2831) [0.2 s] *
+INFO:root:Epoch 20    loss=2.4363 [8.0 s]	dev=(HR@5:0.3983,NDCG@5:0.2842) [0.2 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.3983,NDCG@5:0.2842) [157.3 s] 
+INFO:root:Load model from ../model/HCCF_v3/HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=8__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3983,NDCG@5:0.2842,HR@10:0.5182,NDCG@10:0.3231,HR@20:0.6236,NDCG@20:0.3497,HR@50:0.8007,NDCG@50:0.3847)
+INFO:root:
+Test After Training: (HR@5:0.3296,NDCG@5:0.2276,HR@10:0.4500,NDCG@10:0.2666,HR@20:0.5624,NDCG@20:0.2949,HR@50:0.7607,NDCG@50:0.3339)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v3\HCCF_v3__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v3-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-22 21:20:06 ---------------------------------------------

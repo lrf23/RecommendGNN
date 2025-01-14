@@ -1,0 +1,1159 @@
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 21:54:39 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Loss is Nan. Stop training at 1.
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 21:59:02 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 21:59:44 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:00:18 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:00:30 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:01:08 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:01:20 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:01:54 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:02:26 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:03:02 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:03:14 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:03:33 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:05:40 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Optimizer: Adam
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:05:51 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:06:52 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Optimizer: Adam
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:07:03 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:09:48 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Optimizer: Adam
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:09:55 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:11:08 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:11:18 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:11:34 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:11:56 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:12:01 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:12:37 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:12:41 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:12:46 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:13:24 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:13:49 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:13:52 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Epoch 1     loss=2.4482 [63.9 s]	dev=(HR@5:0.3466,NDCG@5:0.2325) [0.1 s] *
+INFO:root:Epoch 2     loss=1.9431 [67.5 s]	dev=(HR@5:0.3411,NDCG@5:0.2310) [0.1 s]
+INFO:root:Epoch 3     loss=1.8887 [69.9 s]	dev=(HR@5:0.3482,NDCG@5:0.2364) [0.1 s] *
+INFO:root:Epoch 4     loss=1.8505 [70.7 s]	dev=(HR@5:0.3478,NDCG@5:0.2334) [0.1 s]
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:18:30 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:18:39 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Epoch 1     loss=1.0231 [68.2 s]	dev=(HR@5:0.3513,NDCG@5:0.2343) [0.1 s] *
+INFO:root:Epoch 2     loss=0.8439 [70.8 s]	dev=(HR@5:0.3528,NDCG@5:0.2371) [0.1 s] *
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:21:04 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:21:12 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Epoch 1     loss=0.7553 [67.4 s]	dev=(HR@5:0.3528,NDCG@5:0.2360) [0.1 s] *
+INFO:root:Epoch 2     loss=0.6202 [67.0 s]	dev=(HR@5:0.3618,NDCG@5:0.2404) [0.1 s] *
+INFO:root:Epoch 3     loss=0.6051 [66.2 s]	dev=(HR@5:0.3614,NDCG@5:0.2437) [0.1 s] *
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:25:39 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:26:03 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Epoch 1     loss=0.7553 [63.5 s]	dev=(HR@5:0.3528,NDCG@5:0.2360) [0.1 s] *
+INFO:root:Epoch 2     loss=0.6202 [68.6 s]	dev=(HR@5:0.3618,NDCG@5:0.2404) [0.1 s] *
+INFO:root:Epoch 3     loss=0.6051 [69.1 s]	dev=(HR@5:0.3614,NDCG@5:0.2437) [0.1 s] *
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:29:33 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:29:45 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Epoch 1     loss=0.7553 [67.5 s]	dev=(HR@5:0.3528,NDCG@5:0.2360) [0.1 s] *
+INFO:root:Epoch 2     loss=0.6202 [68.3 s]	dev=(HR@5:0.3618,NDCG@5:0.2404) [0.1 s] *
+INFO:root:Epoch 3     loss=0.6051 [137.1 s]	dev=(HR@5:0.3614,NDCG@5:0.2437) [0.1 s] *
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:34:23 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:52:26 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Epoch 1     loss=0.4112 [75.5 s]	dev=(HR@5:0.3528,NDCG@5:0.2338) [0.1 s] *
+INFO:root:Epoch 2     loss=0.3322 [90.6 s]	dev=(HR@5:0.3388,NDCG@5:0.2252) [0.1 s]
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:55:17 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:55:26 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.3678 [68.2 s]	dev=(HR@5:0.3782,NDCG@5:0.2526) [0.1 s] *
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:56:49 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:57:03 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.9521 [100.3 s]	dev=(HR@5:0.3646,NDCG@5:0.2448) [0.1 s] *
+INFO:root:Epoch 2     loss=0.8066 [88.5 s]	dev=(HR@5:0.3790,NDCG@5:0.2550) [0.1 s] *
+INFO:root:Epoch 3     loss=0.7823 [69.3 s]	dev=(HR@5:0.3665,NDCG@5:0.2470) [0.1 s]
+INFO:root:Epoch 4     loss=0.7662 [69.1 s]	dev=(HR@5:0.3813,NDCG@5:0.2568) [0.1 s] *
+INFO:root:Epoch 5     loss=0.7547 [70.2 s]	dev=(HR@5:0.3888,NDCG@5:0.2606) [0.1 s] *
+INFO:root:Epoch 6     loss=0.7405 [69.8 s]	dev=(HR@5:0.3649,NDCG@5:0.2494) [0.1 s]
+INFO:root:Epoch 7     loss=0.7348 [68.7 s]	dev=(HR@5:0.3716,NDCG@5:0.2507) [0.1 s]
+INFO:root:Epoch 8     loss=0.7303 [68.5 s]	dev=(HR@5:0.3919,NDCG@5:0.2652) [0.1 s] *
+INFO:root:Epoch 9     loss=0.7261 [69.9 s]	dev=(HR@5:0.3973,NDCG@5:0.2653) [0.1 s] *
+INFO:root:Epoch 10    loss=0.7234 [68.8 s]	dev=(HR@5:0.3966,NDCG@5:0.2703) [0.1 s] *
+INFO:root:
+Best Iter(dev)=   10	 dev=(HR@5:0.3966,NDCG@5:0.2703) [744.2 s] 
+INFO:root:Load model from ../model/HCCF_v4/HCCF_v4__MovieLens_1M/ML_1MTOPK__0__lr=0.001__l2=0__emb_size=32__hyper_num=128__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3966,NDCG@5:0.2703,HR@10:0.5652,NDCG@10:0.3248,HR@20:0.7541,NDCG@20:0.3726,HR@50:0.9395,NDCG@50:0.4100)
+INFO:root:
+Test After Training: (HR@5:0.3629,NDCG@5:0.2512,HR@10:0.5306,NDCG@10:0.3051,HR@20:0.7227,NDCG@20:0.3537,HR@50:0.9419,NDCG@50:0.3978)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v4/HCCF_v4__MovieLens_1M\ML_1MTOPK__0__lr=0\rec-HCCF_v4-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v4/HCCF_v4__MovieLens_1M\ML_1MTOPK__0__lr=0\rec-HCCF_v4-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 23:09:28 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-22 21:27:15 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 200                 
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 128                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 301280
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0525,NDCG@5:0.0308,HR@10:0.0978,NDCG@10:0.0452,HR@20:0.1980,NDCG@20:0.0704,HR@50:0.5150,NDCG@50:0.1324)
+INFO:root:Optimizer: Adam
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-22 21:27:27 ---------------------------------------------

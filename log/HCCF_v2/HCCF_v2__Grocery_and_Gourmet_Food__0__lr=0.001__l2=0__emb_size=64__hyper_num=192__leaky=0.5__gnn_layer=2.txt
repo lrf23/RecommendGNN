@@ -1,0 +1,120 @@
+INFO:root:Namespace(model_name='HCCF_v2', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-20 22:25:39 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 192                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1521920
+INFO:root:HCCF_v2(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0503,NDCG@5:0.0300,HR@10:0.1039,NDCG@10:0.0471,HR@20:0.2020,NDCG@20:0.0715,HR@50:0.5000,NDCG@50:0.1296)
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-20 22:25:47 ---------------------------------------------
+INFO:root:Namespace(model_name='HCCF_v2', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-20 22:25:58 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 192                 
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 1521920
+INFO:root:HCCF_v2(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0503,NDCG@5:0.0300,HR@10:0.1039,NDCG@10:0.0471,HR@20:0.2020,NDCG@20:0.0715,HR@50:0.5000,NDCG@50:0.1296)
+INFO:root:Epoch 1     loss=0.4972 [9.4 s]	dev=(HR@5:0.2668,NDCG@5:0.1821) [0.2 s] *
+INFO:root:Epoch 2     loss=0.3500 [8.2 s]	dev=(HR@5:0.3272,NDCG@5:0.2283) [0.2 s] *
+INFO:root:Epoch 3     loss=0.2474 [8.4 s]	dev=(HR@5:0.3441,NDCG@5:0.2418) [0.2 s] *
+INFO:root:Epoch 4     loss=0.1990 [8.3 s]	dev=(HR@5:0.3415,NDCG@5:0.2399) [0.2 s]
+INFO:root:Epoch 5     loss=0.1760 [13.9 s]	dev=(HR@5:0.3558,NDCG@5:0.2510) [0.4 s] *
+INFO:root:Epoch 6     loss=0.1642 [15.3 s]	dev=(HR@5:0.3441,NDCG@5:0.2442) [0.2 s]
+INFO:root:Epoch 7     loss=0.1579 [8.2 s]	dev=(HR@5:0.3394,NDCG@5:0.2378) [0.2 s]
+INFO:root:Epoch 8     loss=0.1529 [8.1 s]	dev=(HR@5:0.3382,NDCG@5:0.2405) [0.2 s]
+INFO:root:Epoch 9     loss=0.1367 [8.6 s]	dev=(HR@5:0.3538,NDCG@5:0.2511) [0.2 s] *
+INFO:root:Epoch 10    loss=0.1247 [8.1 s]	dev=(HR@5:0.3537,NDCG@5:0.2495) [0.2 s]
+INFO:root:Epoch 11    loss=0.1153 [8.4 s]	dev=(HR@5:0.3508,NDCG@5:0.2489) [0.2 s]
+INFO:root:Epoch 12    loss=0.1084 [8.5 s]	dev=(HR@5:0.3507,NDCG@5:0.2510) [0.2 s]
+INFO:root:Epoch 13    loss=0.1021 [8.9 s]	dev=(HR@5:0.3643,NDCG@5:0.2589) [0.2 s] *
+INFO:root:Epoch 14    loss=0.0984 [11.9 s]	dev=(HR@5:0.3532,NDCG@5:0.2514) [0.4 s]
+INFO:root:Epoch 15    loss=0.0946 [20.1 s]	dev=(HR@5:0.3545,NDCG@5:0.2525) [0.4 s]
+INFO:root:Epoch 16    loss=0.0912 [19.6 s]	dev=(HR@5:0.3550,NDCG@5:0.2534) [0.4 s]
+INFO:root:Epoch 17    loss=0.0881 [19.1 s]	dev=(HR@5:0.3600,NDCG@5:0.2573) [0.5 s]
+INFO:root:Epoch 18    loss=0.0851 [20.5 s]	dev=(HR@5:0.3597,NDCG@5:0.2584) [0.4 s]
+INFO:root:Epoch 19    loss=0.0821 [16.3 s]	dev=(HR@5:0.3615,NDCG@5:0.2587) [0.2 s]
+INFO:root:Epoch 20    loss=0.0808 [17.9 s]	dev=(HR@5:0.3623,NDCG@5:0.2595) [0.4 s] *
+INFO:root:
+Best Iter(dev)=   20	 dev=(HR@5:0.3623,NDCG@5:0.2595) [253.0 s] 
+INFO:root:Load model from ../model/HCCF_v2/HCCF_v2__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__hyper_num=192__leaky=0.5__gnn_layer=2.pt
+INFO:root:
+Dev  After Training: (HR@5:0.3623,NDCG@5:0.2595,HR@10:0.4684,NDCG@10:0.2940,HR@20:0.5765,NDCG@20:0.3212,HR@50:0.7837,NDCG@50:0.3621)
+INFO:root:
+Test After Training: (HR@5:0.2909,NDCG@5:0.2003,HR@10:0.3983,NDCG@10:0.2352,HR@20:0.5201,NDCG@20:0.2659,HR@50:0.7495,NDCG@50:0.3110)
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v2\HCCF_v2__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v2-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/HCCF_v2\HCCF_v2__Grocery_and_Gourmet_Food__0__lr=0\rec-HCCF_v2-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-20 22:30:18 ---------------------------------------------

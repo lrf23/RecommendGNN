@@ -1,0 +1,48 @@
+INFO:root:Namespace(model_name='HCCF_v4', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 22:48:30 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | MovieLens_1M/ML_1...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 32                  
+ epoch              | 10                  
+ eval_batch_size    | 256                 
+ gnn_layer          | 2                   
+ gpu                | 0                   
+ hyper_num          | 64                  
+ l2                 | 0                   
+ leaky              | 0.5                 
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\MovieLens_1M/ML_1MTOPK\BaseReader.pkl
+INFO:root:#params: 297184
+INFO:root:HCCF_v4(
+  (gcnLayer): GCNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (hgnnLayer): HGNNLayer(
+    (act): LeakyReLU(negative_slope=0.5)
+  )
+  (edgeDropper): SpAdjDropEdge()
+)
+INFO:root:Test Before Training: (HR@5:0.0571,NDCG@5:0.0336,HR@10:0.1019,NDCG@10:0.0479,HR@20:0.1973,NDCG@20:0.0719,HR@50:0.4906,NDCG@50:0.1291)
+INFO:root:Epoch 1     loss=0.4212 [71.7 s]	dev=(HR@5:0.3599,NDCG@5:0.2394) [0.1 s] *
+INFO:root:Epoch 2     loss=0.3379 [68.3 s]	dev=(HR@5:0.3618,NDCG@5:0.2423) [0.1 s] *
+INFO:root:Epoch 3     loss=0.3231 [80.0 s]	dev=(HR@5:0.3599,NDCG@5:0.2414) [0.1 s]
+INFO:root:Early stop manually
+INFO:root:
+--------------------------------------------- END: 2024-12-21 22:52:15 ---------------------------------------------

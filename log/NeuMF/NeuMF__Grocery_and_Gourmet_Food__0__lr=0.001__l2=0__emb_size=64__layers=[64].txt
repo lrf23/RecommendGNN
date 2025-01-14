@@ -1,0 +1,74 @@
+INFO:root:Namespace(model_name='NeuMF', model_mode='')
+INFO:root:--------------------------------------------- BEGIN: 2024-12-21 14:39:49 ---------------------------------------------
+INFO:root:
+===========================================
+ Arguments          | Values               
+===========================================
+ batch_size         | 256                 
+ data_appendix      |                     
+ dataset            | Grocery_and_Gourm...
+ dropout            | 0                   
+ early_stop         | 10                  
+ emb_size           | 64                  
+ epoch              | 20                  
+ eval_batch_size    | 256                 
+ gpu                | 0                   
+ l2                 | 0                   
+ layers             | [64]                
+ lr                 | 0.001               
+ main_metric        |                     
+ num_neg            | 1                   
+ num_workers        | 0                   
+ optimizer          | Adam                
+ random_seed        | 0                   
+ save_final_results | 1                   
+ test_all           | 0                   
+ topk               | 5,10,20,50          
+===========================================
+INFO:root:Device: cuda
+INFO:root:Load corpus from ../data\Grocery_and_Gourmet_Food\BaseReader.pkl
+INFO:root:#params: 3003072
+INFO:root:NeuMF(
+  (mf_u_embeddings): Embedding(14682, 64)
+  (mf_i_embeddings): Embedding(8714, 64)
+  (mlp_u_embeddings): Embedding(14682, 64)
+  (mlp_i_embeddings): Embedding(8714, 64)
+  (mlp): ModuleList(
+    (0): Linear(in_features=128, out_features=64, bias=True)
+  )
+  (dropout_layer): Dropout(p=0, inplace=False)
+  (prediction): Linear(in_features=128, out_features=1, bias=False)
+)
+INFO:root:Test Before Training: (HR@5:0.0524,NDCG@5:0.0301,HR@10:0.1010,NDCG@10:0.0456,HR@20:0.1978,NDCG@20:0.0698,HR@50:0.4901,NDCG@50:0.1269)
+INFO:root:Optimizer: Adam
+INFO:root:Epoch 1     loss=0.5065 [2.7 s]	dev=(HR@5:0.2402,NDCG@5:0.1575) [0.1 s] *
+INFO:root:Epoch 2     loss=0.4418 [1.9 s]	dev=(HR@5:0.2455,NDCG@5:0.1653) [0.1 s] *
+INFO:root:Epoch 3     loss=0.3825 [1.8 s]	dev=(HR@5:0.2847,NDCG@5:0.1932) [0.1 s] *
+INFO:root:Epoch 4     loss=0.2744 [1.8 s]	dev=(HR@5:0.3284,NDCG@5:0.2279) [0.1 s] *
+INFO:root:Epoch 5     loss=0.1659 [1.9 s]	dev=(HR@5:0.3427,NDCG@5:0.2372) [0.1 s] *
+INFO:root:Epoch 6     loss=0.0999 [1.8 s]	dev=(HR@5:0.3468,NDCG@5:0.2423) [0.1 s] *
+INFO:root:Epoch 7     loss=0.0642 [1.8 s]	dev=(HR@5:0.3483,NDCG@5:0.2429) [0.1 s] *
+INFO:root:Epoch 8     loss=0.0455 [1.9 s]	dev=(HR@5:0.3500,NDCG@5:0.2455) [0.1 s] *
+INFO:root:Epoch 9     loss=0.0344 [1.9 s]	dev=(HR@5:0.3510,NDCG@5:0.2450) [0.1 s]
+INFO:root:Epoch 10    loss=0.0273 [1.9 s]	dev=(HR@5:0.3463,NDCG@5:0.2430) [0.1 s]
+INFO:root:Epoch 11    loss=0.0223 [2.0 s]	dev=(HR@5:0.3486,NDCG@5:0.2445) [0.1 s]
+INFO:root:Epoch 12    loss=0.0188 [1.9 s]	dev=(HR@5:0.3438,NDCG@5:0.2399) [0.2 s]
+INFO:root:Epoch 13    loss=0.0172 [1.8 s]	dev=(HR@5:0.3441,NDCG@5:0.2419) [0.1 s]
+INFO:root:Epoch 14    loss=0.0151 [1.7 s]	dev=(HR@5:0.3443,NDCG@5:0.2413) [0.1 s]
+INFO:root:Epoch 15    loss=0.0134 [1.8 s]	dev=(HR@5:0.3443,NDCG@5:0.2417) [0.1 s]
+INFO:root:Epoch 16    loss=0.0123 [1.8 s]	dev=(HR@5:0.3374,NDCG@5:0.2371) [0.1 s]
+INFO:root:Epoch 17    loss=0.0115 [1.8 s]	dev=(HR@5:0.3394,NDCG@5:0.2383) [0.2 s]
+INFO:root:Early stop at 17 based on dev result.
+INFO:root:
+Best Iter(dev)=    8	 dev=(HR@5:0.3500,NDCG@5:0.2455) [33.9 s] 
+INFO:root:Load model from ../model/NeuMF/NeuMF__Grocery_and_Gourmet_Food__0__lr=0.001__l2=0__emb_size=64__layers=[64].pt
+INFO:root:
+Dev  After Training: (HR@5:0.3500,NDCG@5:0.2455,HR@10:0.4572,NDCG@10:0.2803,HR@20:0.5654,NDCG@20:0.3076,HR@50:0.7645,NDCG@50:0.3467)
+INFO:root:
+Test After Training: (HR@5:0.2963,NDCG@5:0.1993,HR@10:0.4049,NDCG@10:0.2346,HR@20:0.5119,NDCG@20:0.2616,HR@50:0.7192,NDCG@50:0.3023)
+INFO:root:Saving top-100 recommendation results to: ../log/NeuMF\NeuMF__Grocery_and_Gourmet_Food__0__lr=0\rec-NeuMF-dev.csv
+INFO:root:dev Prediction results saved!
+INFO:root:Saving top-100 recommendation results to: ../log/NeuMF\NeuMF__Grocery_and_Gourmet_Food__0__lr=0\rec-NeuMF-test.csv
+INFO:root:test Prediction results saved!
+INFO:root:
+--------------------------------------------- END: 2024-12-21 14:40:27 ---------------------------------------------
